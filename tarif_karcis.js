@@ -49,7 +49,7 @@ function getAllTarifKarcis() {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/gettarifkarcis/4' \
+ *      --url 'https://api.rsudkraton.com/gettarifkarcis/4' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {booelan} ok Status sukses

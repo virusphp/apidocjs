@@ -3,13 +3,20 @@ var currentUser = {
 };
 
 /**
- * @api {post} /sendPasien loginPasien
+ * @api {post} /sendpasien loginPasien
  * @apiName GetUser
  * @apiGroup Login
  * 
  * @apiParam {string} api_key Api Key terdaftar
- * @apiParam {integer} no_rm Nomer rekam medis terdaftar
+ * @apiParam {integer} no_RM Nomer rekam medis terdaftar
  * @apiParam {bcrypt} tgl_lahir Tanggal lahir pasien terdaftar
+ * 
+ * @apiExample Example usage:
+ * curl --request POST \
+ *      --url 'https://api.rsudkraton.com/sendpasien' \
+ *      --header 'content-type: application/x-www-form-urlencoded' \
+ *      --header 'key: your-api-key'
+ *      --data 'no_RM=123456&tgl_lahir=1992-2-1'
  * 
  * @apiSuccess {booelan} ok Status sukses
  * @apiSuccess {object} hasil Informasi pasien login

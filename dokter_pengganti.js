@@ -12,7 +12,7 @@ var currentUser = {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/getdokterpengganti/1' \
+ *      --url 'https://api.rsudkraton.com/getdokterpengganti/1' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {booelan} ok Status sukses
@@ -44,7 +44,7 @@ function getDokterPengganti() {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/getalldokterpengganti' \
+ *      --url 'https://api.rsudkraton.com/getalldokterpengganti' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {integer} curent_page Status halaman

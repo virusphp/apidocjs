@@ -47,7 +47,7 @@ function getAllPasien() {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/getpasien/111111' \
+ *      --url 'https://api.rsudkraton.com/getpasien/111111' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {booelan} ok Status sukses

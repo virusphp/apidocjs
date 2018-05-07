@@ -11,7 +11,7 @@ var currentUser = {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/getallsubunit/' \
+ *      --url 'https://api.rsudkraton.com/getallsubunit/' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {integer} curent_page Status halaman
@@ -49,7 +49,7 @@ function getAllSubUnit() {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/getsubunit/1' \
+ *      --url 'https://api.rsudkraton.com/getsubunit/1' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {booelan} ok Status sukses

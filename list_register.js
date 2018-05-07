@@ -12,7 +12,7 @@ var currentUser = {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/getlistregister/222222' \
+ *      --url 'https://api.rsudkraton.com/getlistregister/222222' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {booelan} ok Status sukses

@@ -21,7 +21,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/getalldokterpengganti' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getalldokterpengganti' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -85,7 +85,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/getdokterpengganti/1' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getdokterpengganti/1' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -149,7 +149,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/getlistregister/222222' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getlistregister/222222' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -186,7 +186,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/sendPasien",
+    "url": "/sendpasien",
     "title": "loginPasien",
     "name": "GetUser",
     "group": "Login",
@@ -204,7 +204,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "integer",
             "optional": false,
-            "field": "no_rm",
+            "field": "no_RM",
             "description": "<p>Nomer rekam medis terdaftar</p>"
           },
           {
@@ -217,6 +217,13 @@ define({ "api": [
         ]
       }
     },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request POST \\\n     --url 'https://api.rsudkraton.com/sendpasien' \\\n     --header 'content-type: application/x-www-form-urlencoded' \\\n     --header 'key: your-api-key'\n     --data 'no_RM=123456&tgl_lahir=1992-2-1'",
+        "type": "json"
+      }
+    ],
     "success": {
       "fields": {
         "Success 200": [
@@ -334,7 +341,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/getpasien/111111' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getpasien/111111' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -391,7 +398,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/getallsubunit/' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getallsubunit/' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -455,7 +462,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/getsubunit/1' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getsubunit/1' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -576,7 +583,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/gettarifkarcis/4' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/gettarifkarcis/4' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
