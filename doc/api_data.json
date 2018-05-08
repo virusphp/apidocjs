@@ -58,7 +58,7 @@
   },
   {
     "type": "get",
-    "url": "/getdokterpengganti/namaPoli",
+    "url": "/getdokterpengganti/kd_poli/tgl_reg",
     "title": "getDokterPengganti",
     "name": "getDokterPengganti",
     "group": "Dokter",
@@ -67,17 +67,24 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "api_key",
             "description": "<p>Api Key terdaftar</p>"
           },
           {
             "group": "Parameter",
-            "type": "integer",
+            "type": "Integer",
             "optional": false,
             "field": "kd_sub_unit",
             "description": "<p>Kode sub unit (Poliklinik)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "tgl_reg",
+            "description": "<p>Tanggal registrasi (Tanggal registrasi)</p>"
           }
         ]
       }
@@ -85,7 +92,7 @@
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getdokterpengganti/1' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getdokterpengganti/1/2018-1-1' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -122,10 +129,10 @@
   },
   {
     "type": "get",
-    "url": "/getlistregister/no_rm",
-    "title": "getListRegister",
-    "name": "getListRegister",
-    "group": "ListRegister",
+    "url": "/getjadwaldokter/tanggal",
+    "title": "getJadwalDokter",
+    "name": "getJadwalDokter",
+    "group": "Dokter",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -138,9 +145,73 @@
           },
           {
             "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "tanggal",
+            "description": "<p>Tanggal registrasi (Tanggal registrasi)</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getjadwaldokter/2018-1-1' \\\n     --header 'key: your-api-key'",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
             "type": "integer",
             "optional": false,
-            "field": "no_rm",
+            "field": "curent_page",
+            "description": "<p>Status halaman</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Informasi Dokter pengganti</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n   \"ok\": true,\n   \"hasil\": [\n       {\n         \"Kd_Pegawai\": \"00000001\",\n         \"Kd_Sub_Unit\": 1,\n         \"nama_sub_unit\": \"Klinik Umum\",\n         \"Kd_Hari\": 3,\n         \"Jumlah_Kunjungan\": 60,\n         \"nama_pegawai\": \"dr Apriliani Retno Nugrahini -\"\n       }\n     ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./dokter_pengganti.js",
+    "groupTitle": "Dokter"
+  },
+  {
+    "type": "get",
+    "url": "/getlistregister/no_RM",
+    "title": "getListRegister",
+    "name": "getListRegister",
+    "group": "ListRegister",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "no_RM",
             "description": "<p>Kode RM (RM)</p>"
           }
         ]
@@ -195,21 +266,21 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "api_key",
             "description": "<p>Api Key terdaftar</p>"
           },
           {
             "group": "Parameter",
-            "type": "integer",
+            "type": "Integer",
             "optional": false,
             "field": "no_RM",
             "description": "<p>Nomer rekam medis terdaftar</p>"
           },
           {
             "group": "Parameter",
-            "type": "bcrypt",
+            "type": "Date",
             "optional": false,
             "field": "tgl_lahir",
             "description": "<p>Tanggal lahir pasien terdaftar</p>"
@@ -246,7 +317,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "\n{\n    \"ok\": true,\n    \"hasil\": {\n        \"no_rm\": \"123456\",\n        \"nama_pasien\": \"AGUS MULYANI\",\n        \"tgl_lahir\": \"1992-2-1\",\n        \"jns_kel\": 1,\n        \"alamat\": \"Desa Sijeruk RT2 RW3\",\n        \"kd_kelurahan\": 123,\n        \"jenis_pasien\": 0,\n        \"cara_bayar\": [\n            {\n                \"kd_cara_bayar\": 2,\n                \"keterangan\": \"Asuransi Lain\",\n            },\n            {\n                \"kd_cara_bayar\": 2,\n                \"keterangan\": \"Asuransi Lain\",\n            }\n        ]\n    }    \n}",
+          "content": "\n{\n    \"ok\": true,\n    \"hasil\": {\n        \"no_RM\": \"123456\",\n        \"nama_pasien\": \"AGUS MULYANI\",\n        \"tgl_lahir\": \"1992-2-1\",\n        \"jns_kel\": 1,\n        \"alamat\": \"Desa Sijeruk RT2 RW3\",\n        \"kd_kelurahan\": 123,\n        \"jenis_pasien\": 0,\n        \"cara_bayar\": [\n            {\n                \"kd_cara_bayar\": 2,\n                \"keterangan\": \"Asuransi Lain\",\n            },\n            {\n                \"kd_cara_bayar\": 2,\n                \"keterangan\": \"Asuransi Lain\",\n            }\n        ]\n    }    \n}",
           "type": "json"
         }
       ]
@@ -266,7 +337,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "api_key",
             "description": "<p>Api Key terdaftar</p>"
@@ -277,7 +348,7 @@
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/getallpasien' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getallpasien' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -378,6 +449,70 @@
   },
   {
     "type": "get",
+    "url": "/getrawatjalan/no_reg",
+    "title": "getRawatJalan",
+    "name": "getRawatJalan",
+    "group": "RawatJalan",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "no_reg",
+            "description": "<p>No registrasi pasien</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getrawatjalan/00000000124' \\\n     --header 'key: your-api-key'",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "integer",
+            "optional": false,
+            "field": "current_page",
+            "description": "<p>Status halaman</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Informasi Tarif karcis</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n   \"ok\": true,\n   \"hasil\": \n       {\n         \"no_reg\": \"00000000124\",\n         \"no_RM\": \"360418\",\n         \"kd_poliklinik\": 33,\n         \"kd_cara_kunjungan\": 1,\n         \"status_kunjungan\": 0,\n         \"jns_kasus\": 1,\n         \"waktu_anamnesa\": \"2015-01-01 09:33:27\",\n         \"uraian_anamnesa\": \"\",\n         \"terapi\": \"\",\n         \"status_proses\": 1,\n         \"kd_dokter\": \"00000047\",\n         \"status_berkas\": \"0\",\n         \"Status_Diagnosa\": \"1\",\n         \"no_reg_tahunan\": \"2015.000001\",\n         \"Status_Tambah_Diagnosa\": 1,\n         \"Waktu_Dokumen_Keluar\": null,\n         \"Waktu_Dokumen_Kembali\": null,\n         \"Reg_SMS\": null\n       }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./rawat_jalan.js",
+    "groupTitle": "RawatJalan"
+  },
+  {
+    "type": "get",
     "url": "/getallsubunit",
     "title": "getAllSubUnit",
     "name": "getAllSubUnit",
@@ -387,7 +522,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "api_key",
             "description": "<p>Api Key terdaftar</p>"
@@ -444,14 +579,14 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "api_key",
             "description": "<p>Api Key terdaftar</p>"
           },
           {
             "group": "Parameter",
-            "type": "integer",
+            "type": "Integer",
             "optional": false,
             "field": "kd_sub_unit",
             "description": "<p>Kode sub unit (Poliklinik)</p>"
@@ -508,7 +643,7 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "api_key",
             "description": "<p>Api Key terdaftar</p>"
@@ -519,7 +654,7 @@
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://e-hospital-jateng.com/getalltarifkarcis' \\\n     --header 'key: your-api-key'",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getalltarifkarcis' \\\n     --header 'key: your-api-key'",
         "type": "json"
       }
     ],
@@ -565,14 +700,14 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "api_key",
             "description": "<p>Api Key terdaftar</p>"
           },
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "String",
             "optional": false,
             "field": "kd_sub_unit",
             "description": "<p>Nomor sub unit (poliklinik)</p>"
@@ -617,6 +752,34 @@
     "version": "0.0.0",
     "filename": "./tarif_karcis.js",
     "groupTitle": "TarifKarcis"
+  },
+  {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "./doc/doc/main.js",
+    "group": "_home_sugandi_PROJECT_documentasi_doc_doc_main_js",
+    "groupTitle": "_home_sugandi_PROJECT_documentasi_doc_doc_main_js",
+    "name": ""
   },
   {
     "success": {

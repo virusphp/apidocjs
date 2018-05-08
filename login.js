@@ -7,9 +7,9 @@ var currentUser = {
  * @apiName GetUser
  * @apiGroup Login
  * 
- * @apiParam {string} api_key Api Key terdaftar
- * @apiParam {integer} no_RM Nomer rekam medis terdaftar
- * @apiParam {bcrypt} tgl_lahir Tanggal lahir pasien terdaftar
+ * @apiParam {String} api_key Api Key terdaftar
+ * @apiParam {Integer} no_RM Nomer rekam medis terdaftar
+ * @apiParam {Date} tgl_lahir Tanggal lahir pasien terdaftar
  * 
  * @apiExample Example usage:
  * curl --request POST \
@@ -26,7 +26,7 @@ var currentUser = {
   * {
  *     "ok": true,
  *     "hasil": {
- *         "no_rm": "123456",
+ *         "no_RM": "123456",
  *         "nama_pasien": "AGUS MULYANI",
  *         "tgl_lahir": "1992-2-1",
  *         "jns_kel": 1,

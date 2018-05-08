@@ -7,11 +7,11 @@ var currentUser = {
  * @apiName getAllPasien
  * @apiGroup Pasien
  * 
- * @apiParam {string} api_key Api Key terdaftar
+ * @apiParam {String} api_key Api Key terdaftar
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/getallpasien' \
+ *      --url 'https://api.rsudkraton.com/getallpasien' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {integer} current_page Status halaman

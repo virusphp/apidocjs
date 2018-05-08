@@ -3,16 +3,17 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getdokterpengganti/namaPoli getDokterPengganti
+ * @api {get} /getdokterpengganti/kd_poli/tgl_reg getDokterPengganti
  * @apiName getDokterPengganti
  * @apiGroup Dokter
  * 
- * @apiParam {string} api_key Api Key terdaftar
- * @apiParam {integer} kd_sub_unit Kode sub unit (Poliklinik)
+ * @apiParam {String} api_key Api Key terdaftar
+ * @apiParam {Integer} kd_sub_unit Kode sub unit (Poliklinik)
+ * @apiParam {Date} tgl_reg Tanggal registrasi (Tanggal registrasi)
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://api.rsudkraton.com/getdokterpengganti/1' \
+ *      --url 'https://api.rsudkraton.com/getdokterpengganti/1/2018-1-1' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {booelan} ok Status sukses
@@ -20,7 +21,7 @@ var currentUser = {
  * 
  * @apiSuccessExample {json} Success-Response:
  * 
-* {
+ * {
  *     "ok": true,
  *     "hasil": [
  *          "Kd_Pegawai": "123456",
@@ -65,5 +66,41 @@ function getDokterPengganti() {
  * }
  */
 function getAllDokterPengganti() {
+    return; 
+}
+
+/**
+ * @api {get} /getjadwaldokter/tanggal getJadwalDokter
+ * @apiName getJadwalDokter
+ * @apiGroup Dokter
+ * 
+ * @apiParam {string} api_key Api Key terdaftar
+ * @apiParam {date} tanggal Tanggal registrasi (Tanggal registrasi)
+ * 
+ * @apiExample Example usage:
+ * curl --request GET \
+ *      --url 'https://api.rsudkraton.com/getjadwaldokter/2018-1-1' \
+ *      --header 'key: your-api-key'
+ * 
+ * @apiSuccess {integer} curent_page Status halaman
+ * @apiSuccess {array} data Informasi Dokter pengganti
+ * 
+ * @apiSuccessExample {json} Success-Response:
+ * 
+ * {
+ *    "ok": true,
+ *    "hasil": [
+ *        {
+ *          "Kd_Pegawai": "00000001",
+ *          "Kd_Sub_Unit": 1,
+ *          "nama_sub_unit": "Klinik Umum",
+ *          "Kd_Hari": 3,
+ *          "Jumlah_Kunjungan": 60,
+ *          "nama_pegawai": "dr Apriliani Retno Nugrahini -"
+ *        }
+ *      ]
+ * }
+ */
+function getJadwalDokter() {
     return; 
 }

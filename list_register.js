@@ -3,12 +3,12 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getlistregister/no_rm getListRegister
+ * @api {get} /getlistregister/no_RM getListRegister
  * @apiName getListRegister
  * @apiGroup ListRegister 
  * 
- * @apiParam {string} api_key Api Key terdaftar
- * @apiParam {integer} no_rm Kode RM (RM)
+ * @apiParam {String} api_key Api Key terdaftar
+ * @apiParam {Integer} no_RM Kode RM (RM)
  * 
  * @apiExample Example usage:
  * curl --request GET \

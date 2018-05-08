@@ -7,11 +7,11 @@ var currentUser = {
  * @apiName getAllTarifKarcis
  * @apiGroup TarifKarcis
  * 
- * @apiParam {string} api_key Api Key terdaftar
+ * @apiParam {String} api_key Api Key terdaftar
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://e-hospital-jateng.com/getalltarifkarcis' \
+ *      --url 'https://api.rsudkraton.com/getalltarifkarcis' \
  *      --header 'key: your-api-key'
  * 
  * @apiSuccess {integer} current_page Status halaman
@@ -44,8 +44,8 @@ function getAllTarifKarcis() {
  * @apiName getTarifKarcis 
  * @apiGroup TarifKarcis
  * 
- * @apiParam {string} api_key Api Key terdaftar
- * @apiParam {string} kd_sub_unit Nomor sub unit (poliklinik)
+ * @apiParam {String} api_key Api Key terdaftar
+ * @apiParam {String} kd_sub_unit Nomor sub unit (poliklinik)
  * 
  * @apiExample Example usage:
  * curl --request GET \

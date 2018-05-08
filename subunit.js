@@ -7,7 +7,7 @@ var currentUser = {
  * @apiName getAllSubUnit
  * @apiGroup SubUnit 
  * 
- * @apiParam {string} api_key Api Key terdaftar
+ * @apiParam {String} api_key Api Key terdaftar
  * 
  * @apiExample Example usage:
  * curl --request GET \
@@ -44,8 +44,8 @@ function getAllSubUnit() {
  * @apiName getSubUnit
  * @apiGroup SubUnit
  * 
- * @apiParam {string} api_key Api Key terdaftar
- * @apiParam {integer} kd_sub_unit Kode sub unit (Poliklinik)
+ * @apiParam {String} api_key Api Key terdaftar
+ * @apiParam {Integer} kd_sub_unit Kode sub unit (Poliklinik)
  * 
  * @apiExample Example usage:
  * curl --request GET \
