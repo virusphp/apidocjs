@@ -680,7 +680,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "\n{\n    \"current_page\": 1,\n    \"data\": [\n         \"kd_sub_unit\": 1,\n         \"js\": 18000,\n         \"nama_sub_unit\": \"Klinik Umum\",\n         \"ba\": 0,\n         \"jp\": 22000,\n         \"harga\": 40000,\n         \"Rek_P\": \"4101010030010001\",\n         \"idx_Tarif\": 13371,\n         \"kd_tarif\": \"T150000014\",\n         \"nama_tarif\": \"Pemeriksaan Poliklinik Dokter Umum\"\n     ]\n}",
+          "content": "\n[\n     {\n         \"kd_sub_unit\": 1,\n         \"js\": 18000,\n         \"nama_sub_unit\": \"Klinik Umum\",\n         \"ba\": 0,\n         \"jp\": 22000,\n         \"harga\": 40000,\n         \"Rek_P\": \"4101010030010001\",\n         \"idx_Tarif\": 13371,\n         \"kd_tarif\": \"T150000014\",\n         \"nama_tarif\": \"Pemeriksaan Poliklinik Dokter Umum\"\n     }\n]",
           "type": "json"
         }
       ]

@@ -19,9 +19,8 @@ var currentUser = {
  * 
  * @apiSuccessExample {json} Success-Response:
  * 
- * {
- *     "current_page": 1,
- *     "data": [
+ * [
+ *      {
  *          "kd_sub_unit": 1,
  *          "js": 18000,
  *          "nama_sub_unit": "Klinik Umum",
@@ -32,8 +31,8 @@ var currentUser = {
  *          "idx_Tarif": 13371,
  *          "kd_tarif": "T150000014",
  *          "nama_tarif": "Pemeriksaan Poliklinik Dokter Umum"
- *      ]
- * }
+ *      }
+ * ]
  */
 function getAllTarifKarcis() {
     return; 
