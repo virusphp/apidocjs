@@ -513,6 +513,561 @@
   },
   {
     "type": "get",
+    "url": "/referensi/diagnosa/{parameter}",
+    "title": "diagnosa",
+    "name": "diagnosa",
+    "group": "Referensi",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "kd_diagnosa",
+            "description": "<p>Kode diagnosa terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/diagnosa/A05' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi diagnosa</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"diagnosa\": \n             [\n                 {\n                     \"kode\": \"A04\",\n                     \"nama\": \"A04 - Other bacterial intestinal infections\"\n                 }\n             ],\n         }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./referensi.js",
+    "groupTitle": "Referensi"
+  },
+  {
+    "type": "get",
+    "url": "/referensi/dokter/{parameter}",
+    "title": "dokter",
+    "name": "dokter",
+    "group": "Referensi",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "nama_dokter",
+            "description": "<p>Nama Dokter terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/dokter/Satroni%20Lawa' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi diagnosa</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n         \"metaData\":{\n            \"code\":\"200\",\n            \"message\":\"Sukses\"\n         },\n         \"response\":{\n            \"list\":[\n               {\n                  \"kode\":\"3\",\n                  \"nama\":\"Satro Jadhit, dr\"\n               },\n               {\n                  \"kode\":\"2\",\n                  \"nama\":\"Satroni Lawa, dr\"\n               }\n            ]\n         }\n      }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./referensi.js",
+    "groupTitle": "Referensi"
+  },
+  {
+    "type": "get",
+    "url": "/referensi/poli/{parameter}",
+    "title": "poli",
+    "name": "poli",
+    "group": "Referensi",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "kd_poli",
+            "description": "<p>Kode Poli terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/poli/ICU' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi diagnosa</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n  \"metaData\": {\n      \"code\": \"200\",\n      \"message\": \"Sukses\"\n  },\n  \"response\": {\n      \"poli\": [\n          {\n              \"kode\": \"ICU\",\n              \"nama\": \"Intensive Care Unit\"\n          }\n      ]\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./referensi.js",
+    "groupTitle": "Referensi"
+  },
+  {
+    "type": "post",
+    "url": "/sendregister",
+    "title": "registrasiPasien",
+    "name": "SendPasien",
+    "group": "Registrasi",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "no_reg",
+            "optional": false,
+            "field": "no_reg",
+            "description": "<p>Nomer registrasi medis terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "kd_sub_unit",
+            "optional": false,
+            "field": "kd_sub_unit",
+            "description": "<p>Kode Klinik terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "no_RM",
+            "optional": false,
+            "field": "no_RM",
+            "description": "<p>No Reka Medis terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "tgl_reg",
+            "optional": false,
+            "field": "tgl_reg",
+            "description": "<p>Tanggal registrasi</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "waktu",
+            "optional": false,
+            "field": "waktu",
+            "description": "<p>Waktu registrasi&amp;123456789124$%^&amp;kd+su_su</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "kd_cara_bayar",
+            "optional": false,
+            "field": "kd_cara_bayar",
+            "description": "<p>KD Bayar Pasien</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "user_id",
+            "optional": false,
+            "field": "user_id",
+            "description": "<p>User Admin pendaftaran</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "kd_asal_pasien",
+            "optional": false,
+            "field": "kd_asal_pasien",
+            "description": "<p>Kd Pasien registrasi</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "kd_pegawai",
+            "optional": false,
+            "field": "kd_pegawai",
+            "description": "<p>Kd Dokter terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "no_telp",
+            "optional": false,
+            "field": "no_telp",
+            "description": "<p>No Telp pasien pendaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "kd_tarif",
+            "optional": false,
+            "field": "kd_tarif",
+            "description": "<p>Kd Tarif Poli terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request POST \\\n     --url 'https://api.rsudkraton.com/sendregister' \\\n     --header 'content-type: application/x-www-form-urlencoded' \\\n     --header 'key: your-api-key'\n     --data 'no_RM=123456&no_reg=123456789124&kd_sub_unit=2&no_RM=123456&tgl_reg=2018-06-12& \\\n             waktu=11:22:11&kd_cara_bayar=1&user_id=0003&kd_asal_pasien=3&kd_pegawai=000023&no_telp=08825468&kd_tarif=33'",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "booelan",
+            "optional": false,
+            "field": "ok",
+            "description": "<p>Status sukses</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "hasil",
+            "description": "<p>Informasi registrasi pasien</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n    \"ok\": true,\n    \"hasil\": {\n        \"no_antrian\": \"1\",\n        \"nama_poli\": \"Poli Umum\"\n    }    \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./registrasi_pasien.js",
+    "groupTitle": "Registrasi"
+  },
+  {
+    "type": "get",
+    "url": "/sep/{parameter}",
+    "title": "cariSep",
+    "name": "cariSep",
+    "group": "SEP",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "no_sep",
+            "description": "<p>peserta</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/sep/0301R0011017V000015' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi SEP</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n   \"metaData\": {\n      \"code\": \"200\",\n      \"message\": \"Sukses\"\n   },\n   \"response\": {\n      \"catatan\": \"test\",\n      \"diagnosa\": \"Cholera due to Vibrio cholerae 01, biovar eltor\",\n      \"jnsPelayanan\": \"Rawat INap\",\n      \"kelasRawat\": \"1\",\n      \"noSep\": \"0301R0011017V000015\",\n      \"penjamin\": null,\n      \"peserta\": {\n         \"asuransi\": null,\n         \"hakKelas\": \"Kelas 2\",\n         \"jnsPeserta\": \"PNS Pusat\",\n         \"kelamin\": \"L\",\n         \"nama\": \"SRI MULYONO\",\n         \"noKartu\": \"0001267311161\",\n         \"noMr\": \"123456\",\n         \"tglLahir\": \"1982-01-05\"\n      },\n      \"poli\": \"Poli Penyakit Dalam\",\n      \"poliEksekutif\": \"0\",\n      \"tglSep\": \"2017-10-30\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./cari_sep.js",
+    "groupTitle": "SEP"
+  },
+  {
+    "type": "post",
+    "url": "/sep/insert",
+    "title": "cetakSep",
+    "name": "cetakSep",
+    "group": "SEP",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "json",
+            "optional": false,
+            "field": "json",
+            "description": "<p>request json</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request POST \\\n     --url 'https://api.rsudkraton.com/sep/insert' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi SEP</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Sample:",
+          "content": "                                              \n{\n   \"request\": {\n      \"t_sep\": {\n         \"noKartu\": \"0001112230666\",\n         \"tglSep\": \"2017-10-18\",\n         \"ppkPelayanan\": \"0301R001\",\n         \"jnsPelayanan\": \"2\",\n         \"klsRawat\": \"3\",\n         \"noMR\": \"123456\",\n         \"rujukan\": {\n            \"asalRujukan\": \"1\",\n            \"tglRujukan\": \"2017-10-17\",\n            \"noRujukan\": \"1234567\",\n            \"ppkRujukan\": \"00010001\"\n         },\n         \"catatan\": \"test\",\n         \"diagAwal\": \"A00.1\",\n         \"poli\": {\n            \"tujuan\": \"INT\",\n            \"eksekutif\": \"0\"\n         },\n         \"cob\": {\n            \"cob\": \"0\"\n         },\n         \"jaminan\": {\n            \"lakaLantas\": \"1\",\n            \"penjamin\": \"1\",\n            \"lokasiLaka\": \"Jakarta\"\n         },\n         \"noTelp\": \"081919999\",\n         \"user\": \"Coba Ws\"\n      }\n   }\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "{\n   \"metaData\": {\n      \"code\": \"200\",\n      \"message\": \"Sukses\"\n   },\n   \"response\": {\n      \"sep\": {\n         \"catatan\": \"test\",\n         \"diagnosa\": \"A00.1 - Cholera due to Vibrio cholerae 01, biovar eltor\",\n         \"jnsPelayanan\": \"R.Inap\",\n         \"kelasRawat\": \"1\",\n         \"noSep\": \"0301R0011117V000008\",\n         \"penjamin\": \"-\",\n         \"peserta\": {\n            \"asuransi\": \"-\",\n            \"hakKelas\": \"Kelas 1\",\n            \"jnsPeserta\": \"PNS PUSAT\",\n            \"kelamin\": \"Laki-Laki\",\n            \"nama\": \"ZIYADUL\",\n            \"noKartu\": \"0001112230666\",\n            \"noMr\": \"123456\",\n            \"tglLahir\": \"2008-02-05\"\n         },\n         \"poli\": \"-\",\n         \"poliEksekutif\": \"-\",\n         \"tglSep\": \"2017-10-12\"\n      }\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./cetak_sep.js",
+    "groupTitle": "SEP"
+  },
+  {
+    "type": "delete",
+    "url": "/sep/delete",
+    "title": "deleteSep",
+    "name": "deleteSep",
+    "group": "SEP",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "json",
+            "optional": false,
+            "field": "json",
+            "description": "<p>request json</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request DELETE \\\n     --url 'https://api.rsudkraton.com/sep/delete' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi SEP</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Sample:",
+          "content": "                                                \n{\n   \"request\": {\n      \"t_sep\": {\n         \"noSep\": \"0301R0011017V000007\",\n         \"user\": \"Coba Ws\"\n      }\n   }\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "\n {\n   \"metaData\": {\n          \"code\": \"200\"\n          \"message\": \"OK\"\n      }\n  \"response\": \"0301R0011017V000007\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./delete_sep.js",
+    "groupTitle": "SEP"
+  },
+  {
+    "type": "put",
+    "url": "/sep/update",
+    "title": "updateSep",
+    "name": "updateSep",
+    "group": "SEP",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "json",
+            "optional": false,
+            "field": "json",
+            "description": "<p>request json</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request PUT \\\n     --url 'https://api.rsudkraton.com/sep/update' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi SEP</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Sample:",
+          "content": "                                                  \n                                               \n{\n   \"request\": {\n      \"t_sep\": {\n         \"noSep\": \"0301R0011117V000008\",\n         \"klsRawat\": \"1\",\n         \"noMR\": \"123456\",\n         \"rujukan\": {\n            \"asalRujukan\": \"1\",\n            \"tglRujukan\": \"2017-10-23\",\n            \"noRujukan\": \"1234567\",\n            \"ppkRujukan\": \"00010001\"\n         },\n         \"catatan\": \"test\",\n         \"diagAwal\": \"B00.1\",\n         \"poli\": {\n            \"eksekutif\": \"0\"\n         },\n         \"cob\": {\n            \"cob\": \"0\"\n         },\n         \"jaminan\": {\n            \"lakaLantas\": \"1\",\n            \"penjamin\": \"1,2\",\n            \"lokasiLaka\": \"Jakarta\"\n         },\n         \"noTelp\": \"081919999\",\n         \"user\": \"Coba Ws\"\n      }\n   }\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n   \"metaData\": {\n       \"code\": \"200\",\n       \"message\": \"Sukses\"\n    },\n    \"response\": \"0301R0011117V000008\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./update_sep.js",
+    "groupTitle": "SEP"
+  },
+  {
+    "type": "get",
     "url": "/getallsubunit",
     "title": "getAllSubUnit",
     "name": "getAllSubUnit",
@@ -752,6 +1307,96 @@
     "version": "0.0.0",
     "filename": "./tarif_karcis.js",
     "groupTitle": "TarifKarcis"
+  },
+  {
+    "type": "post",
+    "url": "/user/create",
+    "title": "getRegisterUser",
+    "name": "getUserApi",
+    "group": "UserAPI",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "nama",
+            "description": "<p>Nama pengguna</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username pengguna</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email pengguna</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password pengguna</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kota",
+            "description": "<p>Kota Asal pengguna</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/user/create' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "boolean",
+            "optional": false,
+            "field": "ok",
+            "description": "<p>Status registrasi</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "pesan",
+            "description": "<p>registrasi sukses</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n        \"oke\": true,\n        \"pesan\": \"Berhasil Registrasi\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./registrasi_user_api.js",
+    "groupTitle": "UserAPI"
   },
   {
     "success": {
