@@ -38,7 +38,7 @@ function getAllPasien() {
 }
 
 /**
- * @api {get} /getpasien/noRM getPasien
+ * @api {get} /getpasien/{no_RM} getPasien
  * @apiName getPasien 
  * @apiGroup Pasien
  * 

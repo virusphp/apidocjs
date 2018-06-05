@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /referensi/diagnosa/{parameter} diagnosa
+ * @api {get} /referensi/diagnosa/{kd_diagnosa} diagnosa
  * @apiName diagnosa
  * @apiGroup Referensi
  * 
@@ -43,7 +43,7 @@ function diagnosa() {
 }
 
 /**
- * @api {get} /referensi/poli/{parameter} poli
+ * @api {get} /referensi/poli/{kd_poli} poli
  * @apiName poli 
  * @apiGroup Referensi
  * 
@@ -79,7 +79,7 @@ function poli() {
 }
 
 /**
- * @api {get} /referensi/dokter/{parameter} dokter
+ * @api {get} /referensi/dokter/{nama_dokter} dokter
  * @apiName dokter 
  * @apiGroup Referensi
  * 

@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getrawatjalan/no_reg getRawatJalan
+ * @api {get} /getrawatjalan/{no_reg} getRawatJalan
  * @apiName getRawatJalan
  * @apiGroup RawatJalan
  * 

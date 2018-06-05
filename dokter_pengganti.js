@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getdokterpengganti/kd_poli/tgl_reg getDokterPengganti
+ * @api {get} /getdokterpengganti/{kd_poli}/{tgl_reg} getDokterPengganti
  * @apiName getDokterPengganti
  * @apiGroup Dokter
  * 
@@ -70,7 +70,7 @@ function getAllDokterPengganti() {
 }
 
 /**
- * @api {get} /getjadwaldokter/tanggal getJadwalDokter
+ * @api {get} /getjadwaldokter/{tanggal} getJadwalDokter
  * @apiName getJadwalDokter
  * @apiGroup Dokter
  * 

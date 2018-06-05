@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getlistregister/no_RM getListRegister
+ * @api {get} /getlistregister/{no_RM} getListRegister
  * @apiName getListRegister
  * @apiGroup ListRegister 
  * 

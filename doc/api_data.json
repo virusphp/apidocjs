@@ -58,7 +58,7 @@
   },
   {
     "type": "get",
-    "url": "/getdokterpengganti/kd_poli/tgl_reg",
+    "url": "/getdokterpengganti/{kd_poli}/{tgl_reg}",
     "title": "getDokterPengganti",
     "name": "getDokterPengganti",
     "group": "Dokter",
@@ -129,7 +129,7 @@
   },
   {
     "type": "get",
-    "url": "/getjadwaldokter/tanggal",
+    "url": "/getjadwaldokter/{tanggal}",
     "title": "getJadwalDokter",
     "name": "getJadwalDokter",
     "group": "Dokter",
@@ -193,7 +193,7 @@
   },
   {
     "type": "get",
-    "url": "/getlistregister/no_RM",
+    "url": "/getlistregister/{no_RM}",
     "title": "getListRegister",
     "name": "getListRegister",
     "group": "ListRegister",
@@ -385,7 +385,7 @@
   },
   {
     "type": "get",
-    "url": "/getpasien/noRM",
+    "url": "/getpasien/{no_RM}",
     "title": "getPasien",
     "name": "getPasien",
     "group": "Pasien",
@@ -449,7 +449,7 @@
   },
   {
     "type": "get",
-    "url": "/getrawatjalan/no_reg",
+    "url": "/getrawatjalan/{no_reg}",
     "title": "getRawatJalan",
     "name": "getRawatJalan",
     "group": "RawatJalan",
@@ -513,7 +513,7 @@
   },
   {
     "type": "get",
-    "url": "/referensi/diagnosa/{parameter}",
+    "url": "/referensi/diagnosa/{kd_diagnosa}",
     "title": "diagnosa",
     "name": "diagnosa",
     "group": "Referensi",
@@ -577,7 +577,7 @@
   },
   {
     "type": "get",
-    "url": "/referensi/dokter/{parameter}",
+    "url": "/referensi/dokter/{nama_dokter}",
     "title": "dokter",
     "name": "dokter",
     "group": "Referensi",
@@ -634,7 +634,7 @@
   },
   {
     "type": "get",
-    "url": "/referensi/poli/{parameter}",
+    "url": "/referensi/poli/{kd_poli}",
     "title": "poli",
     "name": "poli",
     "group": "Referensi",
