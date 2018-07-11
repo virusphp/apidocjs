@@ -41,6 +41,37 @@ var currentUser = {
  *     }    
  * }
  */
+
+/**
+ * @api {put} /updateregister Updateregistrasi
+ * @apiName UpdatePasien
+ * @apiGroup Registrasi
+ * 
+ * @apiParam {String} api_key Api Key terdaftar
+ * @apiParam {no_reg} no_reg Nomer registrasi medis terdaftar
+ * @apiParam {no_RM} no_RM No Reka Medis terdaftar
+ * @apiParam {no_SJP} no_SJP No SEP 
+ * 
+ * @apiExample Example usage:
+ * curl --request PUT \
+ *      --url 'https://api.rsudkraton.com/updateregister' \
+ *      --header 'content-type: application/x-www-form-urlencoded' \
+ *      --header 'key: your-api-key' \
+ *      --data 'no_RM=123456&no_reg=123456789124&no_SJP=2JI3J3K123456'
+ * 
+ * @apiSuccess {booelan} ok Status sukses
+ * @apiSuccess {object} hasil Informasi registrasi pasien
+ * 
+ * @apiSuccessExample {json} Success-Response:
+ * 
+ * {
+ *     "ok": true,
+ *     "hasil": {
+ *         "no_SJP": "success",
+ *     }    
+ * }
+*/
+
 function postRegister() {
     return {code:200,data:currentUser};
 }
