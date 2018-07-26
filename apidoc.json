@@ -1,7 +1,7 @@
 {
-    "name": "Documentation Api Pendaftaran Online",
+    "name": "Documentation Api RSUD Kraton Pekalongan",
     "version": "0.1.0",
-    "description": "Use API Registration Online",
-    "title": "Dokumentasi API Pendaftaraan Online",
+    "description": "Use API RSUD Kraton Pekalongan",
+    "title": "Dokumentasi API RSUD Kraton Pekalongan",
     "url" : "http://api.rsudkraton.com"
 }
