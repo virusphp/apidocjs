@@ -249,6 +249,120 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/getallharilibur",
+    "title": "getAllHariLibur",
+    "name": "getallharilibur",
+    "group": "HariLibur",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getallharilibur' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Semua Hari libur</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n   \"ok\": true,\n    \"hasil\": [\n      {\n       \"tgl_libur\": \"2018-05-07\",\n       \"keterangan\": \"Kenaikan Yesus Krisus\"\n       },\n       {\n       \"tgl_libur\": \"2018-05-11\",\n       \"keterangan\": \"asgdahsdg\"\n       },\n       {\n       \"tgl_libur\": \"2018-05-12\",\n       \"keterangan\": null\n       },\n       {\n       \"tgl_libur\": \"2018-05-14\",\n       \"keterangan\": null\n       },\n       {\n       \"tgl_libur\": \"2018-05-15\",\n       \"keterangan\": null\n       }\n     ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./hari_libur.js",
+    "groupTitle": "HariLibur"
+  },
+  {
+    "type": "get",
+    "url": "/getharilibur/{tanggal}",
+    "title": "getHariLibur",
+    "name": "getharilibur",
+    "group": "HariLibur",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getharilibur/2018-05-07' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Hari libur</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n  \"ok\": true,\n   \"hasil\": \n    {\n     \"tgl_libur\": \"2018-05-07\",\n     \"keterangan\": \"Kenaikan Yesus Krisus\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./hari_libur.js",
+    "groupTitle": "HariLibur"
+  },
+  {
+    "type": "get",
     "url": "/getlistregister/{no_RM}",
     "title": "getListRegister",
     "name": "getListRegister",
@@ -502,6 +616,70 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "./pasien.js",
     "groupTitle": "Pasien"
+  },
+  {
+    "type": "get",
+    "url": "/getquotapoli/{tanggal}/{kd_sub_unit}",
+    "title": "getquotapoli",
+    "name": "getquotapoli",
+    "group": "Quota",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tanggal",
+            "description": "<p>pendaftaran</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "kd_sub_unit",
+            "description": "<p>kd sub unit yang terpilih</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getquotapoli/2018-05-23/1' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Quota Poli</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n   \"ok\": true,\n    \"hasil\": {\n        \"Kuota\": \"3\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./quota_poli.js",
+    "groupTitle": "Quota"
   },
   {
     "type": "get",
@@ -1022,6 +1200,70 @@ define({ "api": [
     "groupTitle": "Rujukan"
   },
   {
+    "type": "post",
+    "url": "/rujukaninternal/{no_rujukan}",
+    "title": "rujukaninternal",
+    "name": "rujukaninternal",
+    "group": "Rujukan",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "no_rujukan",
+            "description": "<p>no rujukan  terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request POST \\\n     --url 'https://api.rsudkraton.com/rujukannternal/030107010217Y001465' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi rujukan</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"rujukan\": {\n           \"diagnosa\": {\n              \"kode\": \"N40\",\n             \"nama\": \"Hyperplasia of prostate\"\n           },\n           \"keluhan\": \"kencing tidak puas\",\n           \"noKunjungan\": \"030107010217Y001465\",\n           \"pelayanan\": {\n              \"kode\": \"2\",\n              \"nama\": \"Rawat Jalan\"\n           },\n           \"peserta\": {\n              \"cob\": {\n                 \"nmAsuransi\": null,\n                 \"noAsuransi\": null,\n                 \"tglTAT\": null,\n                 \"tglTMT\": null\n              },\n              \"hakKelas\": {\n                 \"keterangan\": \"KELAS I\",\n                 \"kode\": \"1\"\n              },\n              \"informasi\": {\n                 \"dinsos\": null,\n                 \"noSKTM\": null,\n                 \"prolanisPRB\": null\n              },\n              \"jenisPeserta\": {\n                 \"keterangan\": \"PENERIMA PENSIUN PNS\",\n                 \"kode\": \"15\"\n              },\n              \"mr\": {\n                 \"noMR\": \"298036\",\n                 \"noTelepon\": null\n              },\n              \"nama\": \"MUSDIWAR,BA\",\n              \"nik\": null,\n              \"noKartu\": \"0000416382632\",\n              \"pisa\": \"2\",\n              \"provUmum\": {\n                 \"kdProvider\": \"03010701\",\n                 \"nmProvider\": \"SITEBA\"\n              },\n              \"sex\": \"L\",\n              \"statusPeserta\": {\n                 \"keterangan\": \"AKTIF\",\n                 \"kode\": \"0\"\n              },\n              \"tglCetakKartu\": \"2017-11-13\",\n              \"tglLahir\": \"1938-08-31\",\n              \"tglTAT\": \"2038-08-31\",\n              \"tglTMT\": \"1996-08-20\",\n              \"umur\": {\n                 \"umurSaatPelayanan\": \"78 tahun ,6 bulan ,6 hari\",\n                 \"umurSekarang\": \"79 tahun ,3 bulan ,18 hari\"\n              }\n           },\n           \"poliRujukan\": {\n              \"kode\": \"URO\",\n              \"nama\": \"UROLOGI\"\n           },\n           \"provPerujuk\": {\n              \"kode\": \"03010701\",\n              \"nama\": \"SITEBA\"\n           },\n           \"tglKunjungan\": \"2017-02-25\"\n       }\n     }\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./rujukaninternal.js",
+    "groupTitle": "Rujukan"
+  },
+  {
     "type": "get",
     "url": "/rujukan/peserta/{no_kartu}",
     "title": "rujukanpeserta",
@@ -1083,6 +1325,70 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "./rujukan.js",
+    "groupTitle": "Rujukan"
+  },
+  {
+    "type": "get",
+    "url": "/rujukan/peserta/{no_kartu}",
+    "title": "rujukanpeserta",
+    "name": "rujukanpeserta",
+    "group": "Rujukan",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "no_kartu",
+            "description": "<p>no kartu  terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/rujukan/peserta/0000416382632' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi rujukan</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"rujukan\": {\n           \"diagnosa\": {\n              \"kode\": \"N40\",\n             \"nama\": \"Hyperplasia of prostate\"\n           },\n           \"keluhan\": \"kencing tidak puas\",\n           \"noKunjungan\": \"030107010217Y001465\",\n           \"pelayanan\": {\n              \"kode\": \"2\",\n              \"nama\": \"Rawat Jalan\"\n           },\n           \"peserta\": {\n              \"cob\": {\n                 \"nmAsuransi\": null,\n                 \"noAsuransi\": null,\n                 \"tglTAT\": null,\n                 \"tglTMT\": null\n              },\n              \"hakKelas\": {\n                 \"keterangan\": \"KELAS I\",\n                 \"kode\": \"1\"\n              },\n              \"informasi\": {\n                 \"dinsos\": null,\n                 \"noSKTM\": null,\n                 \"prolanisPRB\": null\n              },\n              \"jenisPeserta\": {\n                 \"keterangan\": \"PENERIMA PENSIUN PNS\",\n                 \"kode\": \"15\"\n              },\n              \"mr\": {\n                 \"noMR\": \"298036\",\n                 \"noTelepon\": null\n              },\n              \"nama\": \"MUSDIWAR,BA\",\n              \"nik\": null,\n              \"noKartu\": \"0000416382632\",\n              \"pisa\": \"2\",\n              \"provUmum\": {\n                 \"kdProvider\": \"03010701\",\n                 \"nmProvider\": \"SITEBA\"\n              },\n              \"sex\": \"L\",\n              \"statusPeserta\": {\n                 \"keterangan\": \"AKTIF\",\n                 \"kode\": \"0\"\n              },\n              \"tglCetakKartu\": \"2017-11-13\",\n              \"tglLahir\": \"1938-08-31\",\n              \"tglTAT\": \"2038-08-31\",\n              \"tglTMT\": \"1996-08-20\",\n              \"umur\": {\n                 \"umurSaatPelayanan\": \"78 tahun ,6 bulan ,6 hari\",\n                 \"umurSekarang\": \"79 tahun ,3 bulan ,18 hari\"\n              }\n           },\n           \"poliRujukan\": {\n              \"kode\": \"URO\",\n              \"nama\": \"UROLOGI\"\n           },\n           \"provPerujuk\": {\n              \"kode\": \"03010701\",\n              \"nama\": \"SITEBA\"\n           },\n           \"tglKunjungan\": \"2017-02-25\"\n       }\n     }\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./rujukaninternal.js",
     "groupTitle": "Rujukan"
   },
   {
@@ -1510,6 +1816,120 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "./subunit.js",
     "groupTitle": "SubUnit"
+  },
+  {
+    "type": "get",
+    "url": "/getnotagihan/{no_tagihan}",
+    "title": "notagihan",
+    "name": "no_tagihan",
+    "group": "Tagihan",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "no_tagihan",
+            "description": "<p>peserta</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/getnotagihan/11017V000015' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi No Bukti</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n   \"ok\": true,\n    \"hasil\": {\n        \"no_bukti\": \"1\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./no_tagihan.js",
+    "groupTitle": "Tagihan"
+  },
+  {
+    "type": "get",
+    "url": "/tanggalserver",
+    "title": "tanggalserver",
+    "name": "tanggalserver",
+    "group": "Tanggal",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>api key</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/sep/0301R0011017V000015' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi ok</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi tanggal dan waktu</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n  \"ok\": \"200\",\n  \"tanggal\": \"2018-01-01\",\n  \"waktu\": \"00:00:00\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./tanggal_server.js",
+    "groupTitle": "Tanggal"
   },
   {
     "type": "get",
