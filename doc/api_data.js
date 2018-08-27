@@ -23,8 +23,8 @@ define({ "api": [
     "url": "",
     "version": "0.0.0",
     "filename": "./doc/doc/main.js",
-    "group": "D__Project_apidocjs_doc_doc_main_js",
-    "groupTitle": "D__Project_apidocjs_doc_doc_main_js",
+    "group": "D__PROJECT_dokumentasi_doc_doc_main_js",
+    "groupTitle": "D__PROJECT_dokumentasi_doc_doc_main_js",
     "name": ""
   },
   {
@@ -51,8 +51,8 @@ define({ "api": [
     "url": "",
     "version": "0.0.0",
     "filename": "./doc/main.js",
-    "group": "D__Project_apidocjs_doc_main_js",
-    "groupTitle": "D__Project_apidocjs_doc_main_js",
+    "group": "D__PROJECT_dokumentasi_doc_main_js",
+    "groupTitle": "D__PROJECT_dokumentasi_doc_main_js",
     "name": ""
   },
   {
@@ -498,6 +498,155 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/mon/historipelayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir}",
+    "title": "History",
+    "name": "history",
+    "group": "Monitoring",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "no_kartu",
+            "description": "<p>no kartu terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "tgl_mul",
+            "description": "<p>tanggal mulai sep terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "tgl_akhir",
+            "description": "<p>tanggal akhir sep terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/mon/historypelayanan/nokartu/0031254455/tglmul/2018-01-01/tglakhir/2018-01-10' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Semua data history pelayanan</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n {\n   \"metaData\": {\n      \"code\": \"200\",\n      \"message\": \"Sukses\"\n   },\n   \"response\": {\n      \"histori\": [\n        {\n            \"diagnosa\": A00.1 - Cholera due to Vibrio cholerae 01, biovar eltor\",\n            \"jnsPelayanan\": \"1\",\n            \"kelasRawat\": \"Kelas 1\",\n            \"namaPeserta\": \"HANIF ABDURRAHMAN\",\n            \"noKartu\": \"0001819122189\",\n            \"noSep\": \"0301R00110170000004\",\n            \"poli\": null,\n            \"ppkPelayanan\": \"RS YOS SUDARSO\",\n            \"tglPlgSep\": \"2017-10-03\",\n            \"tglSep\": \"2017-10-01\"\n        },\n         {\n            \"diagnosa\": A00.1 - Cholera due to Vibrio cholerae 01, biovar eltor\",\n            \"jnsPelayanan\": \"1\",\n            \"kelasRawat\": \"Kelas 1\",\n            \"namaPeserta\": \"HANIF ABDURRAHMAN\",\n            \"noKartu\": \"0001819122189\",\n            \"noSep\": \"0301R00110170000004\",\n            \"poli\": null,\n            \"ppkPelayanan\": \"RS YOS SUDARSO\",\n            \"tglPlgSep\": \"2017-10-10\",\n            \"tglSep\": \"2017-10-01\"\n        },\n         \n     ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./monitoring.js",
+    "groupTitle": "Monitoring"
+  },
+  {
+    "type": "get",
+    "url": "/mon/kunjungan/tanggal/{tgl_sep}/jnspel/{jns_pel}",
+    "title": "Kunjungan",
+    "name": "kunjungan",
+    "group": "Monitoring",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "tgl_sep",
+            "description": "<p>tanggal cetak sep terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "jns_pel",
+            "description": "<p>jenis rawat terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/mon/kunjungan/tanggal/2018-01-01/jnspel/2' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Semua data kunjungan</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n {\n   \"metaData\": {\n      \"code\": \"200\",\n      \"message\": \"Sukses\"\n   },\n   \"response\": {\n      \"sep\": [\n        {\n            \"diagnosa\": \"K65.0\",\n            \"jnsPelayanan\": \"R.Inap\",\n            \"kelasRawat\": \"2\",\n            \"nama\": \"HANIF ABDURRAHMAN\",\n            \"noKartu\": \"0001819122189\",\n            \"noSep\": \"0301R00110170000004\",\n            \"poli\": null,\n            \"tglPlgSep\": \"2017-10-03\",\n            \"tglSep\": \"2017-10-01\"\n        },\n         {\n            \"diagnosa\": \"I50.0\",\n            \"jnsPelayanan\": \"R.Inap\",\n            \"kelasRawat\": \"3\",\n            \"nama\": \"ASRIZAL\",\n            \"noKartu\": \"0002283324674\",\n            \"noSep\": \"0301R00110170000005\",\n            \"poli\": null,\n            \"tglPlgSep\": \"2017-10-10\",\n            \"tglSep\": \"2017-10-01\"\n        },\n         \n     ]\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./monitoring.js",
+    "groupTitle": "Monitoring"
+  },
+  {
+    "type": "get",
     "url": "/getallpasien",
     "title": "getAllPasien",
     "name": "getAllPasien",
@@ -868,6 +1017,212 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/referensi/dokter/pelayanan/{jns_pel}/tglpelayanan/{tgl_pel}/spesialis/{kd_spesialis}",
+    "title": "dpjp",
+    "name": "dpjp",
+    "group": "Referensi",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "jns_pel",
+            "description": "<p>jenis pelayanan terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "tgl_pel",
+            "description": "<p>tanggal pelayanan terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "kd_spesialis",
+            "description": "<p>kd_spesial pelayanan terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/dokter/pelayanan/2/tglpelayanan/2018-01-01/spesialis/3215' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi dokter dpjp</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"list\": \n             [\n                 {\n                     \"kode\": \"12345\",\n                     \"nama\":\"Satro Jadhit, dr\"\n                 },\n                 {\n                     \"kode\": \"54321\",\n                     \"nama\":\"Satroni Lawa, dr\"\n                 }\n             ],\n         }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./referensi_tambahan.js",
+    "groupTitle": "Referensi"
+  },
+  {
+    "type": "get",
+    "url": "/referensi/kabupaten/propinsi/{kd_prov}",
+    "title": "kabupaten",
+    "name": "kabupaten",
+    "group": "Referensi",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kd_prov",
+            "description": "<p>kode propinsi terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/kabupaten/propinsi/12 \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi kabupaten</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"list\": \n             [\n                 {\n                     \"kode\": \"0227\",\n                     \"nama\":\"KAB. BADUNG\"\n                 },\n                 {\n                     \"kode\": \"0230\",\n                     \"nama\":\"KAB. BANGLI\"\n                 }\n             ],\n         }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./referensi_tambahan.js",
+    "groupTitle": "Referensi"
+  },
+  {
+    "type": "get",
+    "url": "/referensi/kecamatan/kabupaten/{kd_kab}",
+    "title": "kecamatan",
+    "name": "kecamatan",
+    "group": "Referensi",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kd_kab",
+            "description": "<p>kode kabupaten terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/kecamatan/kabupaten/0125 \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi kecamatan</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"list\": \n             [\n                 {\n                     \"kode\": \"3139\",\n                     \"nama\":\"KUTA\"\n                 },\n                 {\n                     \"kode\": \"3135\",\n                     \"nama\":\"KUTA UTARA\"\n                 }\n             ],\n         }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./referensi_tambahan.js",
+    "groupTitle": "Referensi"
+  },
+  {
+    "type": "get",
     "url": "/referensi/poli/{kd_poli}",
     "title": "poli",
     "name": "poli",
@@ -921,6 +1276,63 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "./referensi.js",
+    "groupTitle": "Referensi"
+  },
+  {
+    "type": "get",
+    "url": "/referensi/propinsi",
+    "title": "propinsi",
+    "name": "propinsi",
+    "group": "Referensi",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/propinsi \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi propinsi</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"list\": \n             [\n                 {\n                     \"kode\": \"16\",\n                     \"nama\":\"Bali\"\n                 },\n                 {\n                     \"kode\": \"17\",\n                     \"nama\":\"Banten\"\n                 }\n             ],\n         }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./referensi_tambahan.js",
     "groupTitle": "Referensi"
   },
   {
@@ -1200,6 +1612,70 @@ define({ "api": [
     "groupTitle": "Rujukan"
   },
   {
+    "type": "get",
+    "url": "/rujukan/list/perseta{no_nokartu}",
+    "title": "rujukan multi",
+    "name": "rujukan_multi",
+    "group": "Rujukan",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "no_kartu",
+            "description": "<p>no kartu peserta  terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/rujukan/list/peserta/030107010217Y001465' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi rujukan multi</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"rujukan\": {\n           \"diagnosa\": {\n              \"kode\": \"N40\",\n             \"nama\": \"Hyperplasia of prostate\"\n           },\n           \"keluhan\": \"kencing tidak puas\",\n           \"noKunjungan\": \"030107010217Y001465\",\n           \"pelayanan\": {\n              \"kode\": \"2\",\n              \"nama\": \"Rawat Jalan\"\n           },\n           \"peserta\": {\n              \"cob\": {\n                 \"nmAsuransi\": null,\n                 \"noAsuransi\": null,\n                 \"tglTAT\": null,\n                 \"tglTMT\": null\n              },\n              \"hakKelas\": {\n                 \"keterangan\": \"KELAS I\",\n                 \"kode\": \"1\"\n              },\n              \"informasi\": {\n                 \"dinsos\": null,\n                 \"noSKTM\": null,\n                 \"prolanisPRB\": null\n              },\n              \"jenisPeserta\": {\n                 \"keterangan\": \"PENERIMA PENSIUN PNS\",\n                 \"kode\": \"15\"\n              },\n              \"mr\": {\n                 \"noMR\": \"298036\",\n                 \"noTelepon\": null\n              },\n              \"nama\": \"MUSDIWAR,BA\",\n              \"nik\": null,\n              \"noKartu\": \"0000416382632\",\n              \"pisa\": \"2\",\n              \"provUmum\": {\n                 \"kdProvider\": \"03010701\",\n                 \"nmProvider\": \"SITEBA\"\n              },\n              \"sex\": \"L\",\n              \"statusPeserta\": {\n                 \"keterangan\": \"AKTIF\",\n                 \"kode\": \"0\"\n              },\n              \"tglCetakKartu\": \"2017-11-13\",\n              \"tglLahir\": \"1938-08-31\",\n              \"tglTAT\": \"2038-08-31\",\n              \"tglTMT\": \"1996-08-20\",\n              \"umur\": {\n                 \"umurSaatPelayanan\": \"78 tahun ,6 bulan ,6 hari\",\n                 \"umurSekarang\": \"79 tahun ,3 bulan ,18 hari\"\n              }\n           },\n           \"poliRujukan\": {\n              \"kode\": \"URO\",\n              \"nama\": \"UROLOGI\"\n           },\n           \"provPerujuk\": {\n              \"kode\": \"03010701\",\n              \"nama\": \"SITEBA\"\n           },\n           \"tglKunjungan\": \"2017-02-25\"\n       }\n     }\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./rujukan_multi.js",
+    "groupTitle": "Rujukan"
+  },
+  {
     "type": "post",
     "url": "/rujukaninternal/{no_rujukan}",
     "title": "rujukaninternal",
@@ -1324,7 +1800,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./rujukan.js",
+    "filename": "./rujukan_multi.js",
     "groupTitle": "Rujukan"
   },
   {
@@ -1389,6 +1865,70 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "./rujukaninternal.js",
+    "groupTitle": "Rujukan"
+  },
+  {
+    "type": "get",
+    "url": "/rujukan/peserta/{no_kartu}",
+    "title": "rujukanpeserta",
+    "name": "rujukanpeserta",
+    "group": "Rujukan",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "no_kartu",
+            "description": "<p>no kartu  terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/rujukan/peserta/0000416382632' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi rujukan</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"200\",\n             \"message\": \"Sukses\"\n         },\n     \"response\": \n         {\n         \"rujukan\": {\n           \"diagnosa\": {\n              \"kode\": \"N40\",\n             \"nama\": \"Hyperplasia of prostate\"\n           },\n           \"keluhan\": \"kencing tidak puas\",\n           \"noKunjungan\": \"030107010217Y001465\",\n           \"pelayanan\": {\n              \"kode\": \"2\",\n              \"nama\": \"Rawat Jalan\"\n           },\n           \"peserta\": {\n              \"cob\": {\n                 \"nmAsuransi\": null,\n                 \"noAsuransi\": null,\n                 \"tglTAT\": null,\n                 \"tglTMT\": null\n              },\n              \"hakKelas\": {\n                 \"keterangan\": \"KELAS I\",\n                 \"kode\": \"1\"\n              },\n              \"informasi\": {\n                 \"dinsos\": null,\n                 \"noSKTM\": null,\n                 \"prolanisPRB\": null\n              },\n              \"jenisPeserta\": {\n                 \"keterangan\": \"PENERIMA PENSIUN PNS\",\n                 \"kode\": \"15\"\n              },\n              \"mr\": {\n                 \"noMR\": \"298036\",\n                 \"noTelepon\": null\n              },\n              \"nama\": \"MUSDIWAR,BA\",\n              \"nik\": null,\n              \"noKartu\": \"0000416382632\",\n              \"pisa\": \"2\",\n              \"provUmum\": {\n                 \"kdProvider\": \"03010701\",\n                 \"nmProvider\": \"SITEBA\"\n              },\n              \"sex\": \"L\",\n              \"statusPeserta\": {\n                 \"keterangan\": \"AKTIF\",\n                 \"kode\": \"0\"\n              },\n              \"tglCetakKartu\": \"2017-11-13\",\n              \"tglLahir\": \"1938-08-31\",\n              \"tglTAT\": \"2038-08-31\",\n              \"tglTMT\": \"1996-08-20\",\n              \"umur\": {\n                 \"umurSaatPelayanan\": \"78 tahun ,6 bulan ,6 hari\",\n                 \"umurSekarang\": \"79 tahun ,3 bulan ,18 hari\"\n              }\n           },\n           \"poliRujukan\": {\n              \"kode\": \"URO\",\n              \"nama\": \"UROLOGI\"\n           },\n           \"provPerujuk\": {\n              \"kode\": \"03010701\",\n              \"nama\": \"SITEBA\"\n           },\n           \"tglKunjungan\": \"2017-02-25\"\n       }\n     }\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./rujukan.js",
     "groupTitle": "Rujukan"
   },
   {
@@ -1496,12 +2036,12 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Sample:",
-          "content": "                                              \n{\n   \"request\": {\n      \"t_sep\": {\n         \"noKartu\": \"0001112230666\",\n         \"tglSep\": \"2017-10-18\",\n         \"ppkPelayanan\": \"0301R001\",\n         \"jnsPelayanan\": \"2\",\n         \"klsRawat\": \"3\",\n         \"noMR\": \"123456\",\n         \"rujukan\": {\n            \"asalRujukan\": \"1\",\n            \"tglRujukan\": \"2017-10-17\",\n            \"noRujukan\": \"1234567\",\n            \"ppkRujukan\": \"00010001\"\n         },\n         \"catatan\": \"test\",\n         \"diagAwal\": \"A00.1\",\n         \"poli\": {\n            \"tujuan\": \"INT\",\n            \"eksekutif\": \"0\"\n         },\n         \"cob\": {\n            \"cob\": \"0\"\n         },\n         \"jaminan\": {\n            \"lakaLantas\": \"1\",\n            \"penjamin\": \"1\",\n            \"lokasiLaka\": \"Jakarta\"\n         },\n         \"noTelp\": \"081919999\",\n         \"user\": \"Coba Ws\"\n      }\n   }\n}",
+          "content": "                                              \n{\n   \"request\": {\n      \"t_sep\": {\n         \"noKartu\": \"0001112230666\",\n         \"tglSep\": \"2017-10-18\",\n         \"ppkPelayanan\": \"0301R001\",\n         \"jnsPelayanan\": \"2\",\n         \"klsRawat\": \"3\",\n         \"noMR\": \"123456\",\n         \"rujukan\": {\n            \"asalRujukan\": \"1\",\n            \"tglRujukan\": \"2017-10-17\",\n            \"noRujukan\": \"1234567\",\n            \"ppkRujukan\": \"00010001\"\n         },\n         \"catatan\": \"test\",\n         \"diagAwal\": \"A00.1\",\n         \"poli\": {\n            \"tujuan\": \"INT\",\n            \"eksekutif\": \"0\"\n         },\n         \"cob\": {\n            \"cob\": \"0\"\n         },\n         \"katarak\": {\n            \"katarak\": \"0\"\n         },\n         \"jaminan\": {\n            \"lakaLantas\": \"1\",\n            \"penjamin\": {\n               \"penjamin\" : \"1\",\n               \"tglKejadian\" : \"2018-08-01\",\n               \"keterangan\" : \"kll\",\n               \"suples\" : {\n                   \"suplesi\" : \"0\", \n                   \"noSepSuplesi\" : \"0301R0010718V000001\", \n                   \"lokasiLaka\" : {\n                       \"kdPropinsi\" : \"03\", \n                       \"kdKabupaten\" : \"0050\", \n                       \"kdKecamatan\" : \"0574\" \n                   }\n               }\n            }\n         },\n         \"skdp\": {\n           \"noSurat\" : \"000002\", \n           \"kdDPJP\" : \"31661\", \n         }\n         \"noTelp\": \"08191999999\",\n         \"user\": \"Admin CS\"\n      }\n   }\n}",
           "type": "json"
         },
         {
           "title": "Success-Response:",
-          "content": "{\n   \"metaData\": {\n      \"code\": \"200\",\n      \"message\": \"Sukses\"\n   },\n   \"response\": {\n      \"sep\": {\n         \"catatan\": \"test\",\n         \"diagnosa\": \"A00.1 - Cholera due to Vibrio cholerae 01, biovar eltor\",\n         \"jnsPelayanan\": \"R.Inap\",\n         \"kelasRawat\": \"1\",\n         \"noSep\": \"0301R0011117V000008\",\n         \"penjamin\": \"-\",\n         \"peserta\": {\n            \"asuransi\": \"-\",\n            \"hakKelas\": \"Kelas 1\",\n            \"jnsPeserta\": \"PNS PUSAT\",\n            \"kelamin\": \"Laki-Laki\",\n            \"nama\": \"ZIYADUL\",\n            \"noKartu\": \"0001112230666\",\n            \"noMr\": \"123456\",\n            \"tglLahir\": \"2008-02-05\"\n         },\n         \"poli\": \"-\",\n         \"poliEksekutif\": \"-\",\n         \"tglSep\": \"2017-10-12\"\n      }\n   }\n}",
+          "content": "{\n   \"metaData\": {\n      \"code\": \"200\",\n      \"message\": \"Sukses\"\n   },\n   \"response\": {\n      \"sep\": {\n         \"catatan\": \"test\",\n         \"diagnosa\": \"A00.1 - Cholera due to Vibrio cholerae 01, biovar eltor\",\n         \"jnsPelayanan\": \"R.Inap\",\n         \"kelasRawat\": \"1\",\n         \"noSep\": \"0301R0011117V000008\",\n         \"penjamin\": \"-\",\n         \"peserta\": {\n            \"asuransi\": \"-\",\n            \"hakKelas\": \"Kelas 1\",\n            \"jnsPeserta\": \"PNS PUSAT\",\n            \"kelamin\": \"Laki-Laki\",\n            \"nama\": \"ZIYADUL\",\n            \"noKartu\": \"0001112230666\",\n            \"noMr\": \"123456\",\n            \"tglLahir\": \"2008-02-05\"\n         },\n         \"informasi:\": {\n            \"Dinsos\":null,\n            \"prolanisPRB\":null,\n            \"noSKTM\":null\n         },\n         \"poli\": \"-\",\n         \"poliEksekutif\": \"-\",\n         \"tglSep\": \"2017-10-12\"\n      }\n   }\n}",
           "type": "json"
         }
       ]
@@ -1620,7 +2160,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Sample:",
-          "content": "                                                  \n                                               \n{\n   \"request\": {\n      \"t_sep\": {\n         \"noSep\": \"0301R0011117V000008\",\n         \"klsRawat\": \"1\",\n         \"noMR\": \"123456\",\n         \"rujukan\": {\n            \"asalRujukan\": \"1\",\n            \"tglRujukan\": \"2017-10-23\",\n            \"noRujukan\": \"1234567\",\n            \"ppkRujukan\": \"00010001\"\n         },\n         \"catatan\": \"test\",\n         \"diagAwal\": \"B00.1\",\n         \"poli\": {\n            \"eksekutif\": \"0\"\n         },\n         \"cob\": {\n            \"cob\": \"0\"\n         },\n         \"jaminan\": {\n            \"lakaLantas\": \"1\",\n            \"penjamin\": \"1,2\",\n            \"lokasiLaka\": \"Jakarta\"\n         },\n         \"noTelp\": \"081919999\",\n         \"user\": \"Coba Ws\"\n      }\n   }\n}",
+          "content": "                                                  \n                                               \n{\n   \"request\": {\n      \"t_sep\": {\n         \"noSep\": \"0301R0011117V000008\",\n         \"klsRawat\": \"1\",\n         \"noMR\": \"123456\",\n         \"rujukan\": {\n            \"asalRujukan\": \"1\",\n            \"tglRujukan\": \"2017-10-23\",\n            \"noRujukan\": \"1234567\",\n            \"ppkRujukan\": \"00010001\"\n         },\n         \"catatan\": \"test\",\n         \"diagAwal\": \"B00.1\",\n         \"poli\": {\n            \"eksekutif\": \"0\"\n         },\n         \"cob\": {\n            \"cob\": \"0\"\n         },\n         \"katarak\": {\n            \"katarak\": \"1\"\n         },\n         \"jaminan\": {\n                \"lakaLantas\": \"1\",\n                \"penjamin\": {\n                   \"penjamin\" : \"1\",\n                   \"tglKejadian\" : \"2018-08-01\",\n                   \"keterangan\" : \"kll\",\n                   \"suples\" : {\n                       \"suplesi\" : \"0\", \n                       \"noSepSuplesi\" : \"0301R0010718V000001\", \n                       \"lokasiLaka\" : {\n                           \"kdPropinsi\" : \"03\", \n                           \"kdKabupaten\" : \"0050\", \n                           \"kdKecamatan\" : \"0574\" \n                       }\n                   }\n                }\n             },\n         \"noTelp\": \"081919999\",\n         \"user\": \"Coba Ws\"\n      }\n   }\n}",
           "type": "json"
         },
         {

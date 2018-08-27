@@ -40,11 +40,26 @@ var currentUser = {
  *            "cob": {
  *               "cob": "0"
  *            },
- *            "jaminan": {
- *               "lakaLantas": "1",
- *               "penjamin": "1,2",
- *               "lokasiLaka": "Jakarta"
+ *            "katarak": {
+ *               "katarak": "1"
  *            },
+ *            "jaminan": {
+ *                   "lakaLantas": "1",
+ *                   "penjamin": {
+ *                      "penjamin" : "1",
+ *                      "tglKejadian" : "2018-08-01",
+ *                      "keterangan" : "kll",
+ *                      "suples" : {
+ *                          "suplesi" : "0", 
+ *                          "noSepSuplesi" : "0301R0010718V000001", 
+ *                          "lokasiLaka" : {
+ *                              "kdPropinsi" : "03", 
+ *                              "kdKabupaten" : "0050", 
+ *                              "kdKecamatan" : "0574" 
+ *                          }
+ *                      }
+ *                   }
+ *                },
  *            "noTelp": "081919999",
  *            "user": "Coba Ws"
  *         }

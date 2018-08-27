@@ -43,13 +43,32 @@ var currentUser = {
  *                "cob": {
  *                   "cob": "0"
  *                },
+ *                "katarak": {
+ *                   "katarak": "0"
+ *                },
  *                "jaminan": {
  *                   "lakaLantas": "1",
- *                   "penjamin": "1",
- *                   "lokasiLaka": "Jakarta"
+ *                   "penjamin": {
+ *                      "penjamin" : "1",
+ *                      "tglKejadian" : "2018-08-01",
+ *                      "keterangan" : "kll",
+ *                      "suples" : {
+ *                          "suplesi" : "0", 
+ *                          "noSepSuplesi" : "0301R0010718V000001", 
+ *                          "lokasiLaka" : {
+ *                              "kdPropinsi" : "03", 
+ *                              "kdKabupaten" : "0050", 
+ *                              "kdKecamatan" : "0574" 
+ *                          }
+ *                      }
+ *                   }
  *                },
- *                "noTelp": "081919999",
- *                "user": "Coba Ws"
+ *                "skdp": {
+ *                  "noSurat" : "000002", 
+ *                  "kdDPJP" : "31661", 
+ *                }
+ *                "noTelp": "08191999999",
+ *                "user": "Admin CS"
  *             }
  *          }
  *       }                    
@@ -77,6 +96,11 @@ var currentUser = {
  *                   "noKartu": "0001112230666",
  *                   "noMr": "123456",
  *                   "tglLahir": "2008-02-05"
+ *                },
+ *                "informasi:": {
+ *                   "Dinsos":null,
+ *                   "prolanisPRB":null,
+ *                   "noSKTM":null
  *                },
  *                "poli": "-",
  *                "poliEksekutif": "-",
