@@ -57,7 +57,7 @@ function dpjp() {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://api.rsudkraton.com/referensi/propinsi \
+ *      --url 'https://api.rsudkraton.com/referensi/provinsi \
  *      --header 'key: your-api-key' \
  * 
  * @apiSuccess {json} metadata Informasi code dan pesan
