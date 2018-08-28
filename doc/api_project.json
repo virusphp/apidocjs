@@ -1,6 +1,6 @@
 {
   "name": "Documentation Api RSUD Kraton Pekalongan",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "Use API RSUD Kraton Pekalongan",
   "title": "Dokumentasi API RSUD Kraton Pekalongan",
   "url": "http://api.rsudkraton.com",
@@ -9,7 +9,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-08-27T03:02:05.604Z",
+    "time": "2018-08-28T02:02:59.260Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }

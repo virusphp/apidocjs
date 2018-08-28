@@ -768,6 +768,148 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/peserta/nik/{nik}/tglsep/{tgl_sep}",
+    "title": "Peserta Nik",
+    "name": "pesertaNik",
+    "group": "Peserta",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "nik",
+            "optional": false,
+            "field": "nik",
+            "description": "<p>no induk kependudukan peserta terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "tgl_sep",
+            "description": "<p>tanggal sep peserta terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/peserta/nik/3374132708800008/tglsep/2018-08-27' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi data Peserta</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n       {\n\"metaData\": {\n  \"code\": \"200\",\n  \"message\": \"OK\"\n},\n\"response\": {\n  \"peserta\": {\n    \"cob\": {\n      \"nmAsuransi\": null,\n      \"noAsuransi\": null,\n      \"tglTAT\": null,\n      \"tglTMT\": null\n    },\n    \"hakKelas\": {\n      \"keterangan\": \"KELAS II\",\n      \"kode\": \"2\"\n    },\n    \"informasi\": {\n      \"dinsos\": null,\n      \"noSKTM\": null,\n      \"prolanisPRB\": null\n    },\n    \"jenisPeserta\": {\n      \"keterangan\": \"PEGAWAI SWASTA\",\n      \"kode\": \"13\"\n    },\n    \"mr\": {\n      \"noMR\": null,\n      \"noTelepon\": null\n    },\n    \"nama\": \"MARTIN EKO SETIAWAN\",\n    \"nik\": \"3374132708800008\",\n    \"noKartu\": \"0001851105598\",\n    \"pisa\": \"1\",\n    \"provUmum\": {\n      \"kdProvider\": \"0173U048\",\n      \"nmProvider\": \"KARTIKA DEVI ANJARDINI, DR.\"\n    },\n    \"sex\": \"L\",\n    \"statusPeserta\": {\n      \"keterangan\": \"AKTIF\",\n      \"kode\": \"0\"\n    },\n    \"tglCetakKartu\": \"2016-10-06\",\n    \"tglLahir\": \"1980-08-27\",\n    \"tglTAT\": \"2050-12-31\",\n    \"tglTMT\": \"2015-06-01\",\n    \"umur\": {\n      \"umurSaatPelayanan\": \"38 tahun ,0 bulan ,0 hari\",\n      \"umurSekarang\": \"38 tahun ,0 bulan ,1 hari\"\n    }\n  }\n}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./peserta.js",
+    "groupTitle": "Peserta"
+  },
+  {
+    "type": "get",
+    "url": "/peserta/nokartu/{no_kartu}/tglsep/{tgl_sep}",
+    "title": "Peserta No Kartu",
+    "name": "pesertaNoKartu",
+    "group": "Peserta",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "no_kartu",
+            "optional": false,
+            "field": "no_kartu",
+            "description": "<p>no Kartu peserta terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "tgl_sep",
+            "description": "<p>tanggal sep peserta terdaftar</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/peserta/nokartu/0001851105598/tglsep/2018-08-27' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi data Peserta</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n       {\n\"metaData\": {\n  \"code\": \"200\",\n  \"message\": \"OK\"\n},\n\"response\": {\n  \"peserta\": {\n    \"cob\": {\n      \"nmAsuransi\": null,\n      \"noAsuransi\": null,\n      \"tglTAT\": null,\n      \"tglTMT\": null\n    },\n    \"hakKelas\": {\n      \"keterangan\": \"KELAS II\",\n      \"kode\": \"2\"\n    },\n    \"informasi\": {\n      \"dinsos\": null,\n      \"noSKTM\": null,\n      \"prolanisPRB\": null\n    },\n    \"jenisPeserta\": {\n      \"keterangan\": \"PEGAWAI SWASTA\",\n      \"kode\": \"13\"\n    },\n    \"mr\": {\n      \"noMR\": null,\n      \"noTelepon\": null\n    },\n    \"nama\": \"MARTIN EKO SETIAWAN\",\n    \"nik\": \"3374132708800008\",\n    \"noKartu\": \"0001851105598\",\n    \"pisa\": \"1\",\n    \"provUmum\": {\n      \"kdProvider\": \"0173U048\",\n      \"nmProvider\": \"KARTIKA DEVI ANJARDINI, DR.\"\n    },\n    \"sex\": \"L\",\n    \"statusPeserta\": {\n      \"keterangan\": \"AKTIF\",\n      \"kode\": \"0\"\n    },\n    \"tglCetakKartu\": \"2016-10-06\",\n    \"tglLahir\": \"1980-08-27\",\n    \"tglTAT\": \"2050-12-31\",\n    \"tglTMT\": \"2015-06-01\",\n    \"umur\": {\n      \"umurSaatPelayanan\": \"38 tahun ,0 bulan ,0 hari\",\n      \"umurSekarang\": \"38 tahun ,0 bulan ,1 hari\"\n    }\n  }\n}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./peserta.js",
+    "groupTitle": "Peserta"
+  },
+  {
+    "type": "get",
     "url": "/getquotapoli/{tanggal}/{kd_sub_unit}",
     "title": "getquotapoli",
     "name": "getquotapoli",
@@ -1800,7 +1942,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./rujukan_multi.js",
+    "filename": "./rujukaninternal.js",
     "groupTitle": "Rujukan"
   },
   {
@@ -1864,7 +2006,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./rujukaninternal.js",
+    "filename": "./rujukan_multi.js",
     "groupTitle": "Rujukan"
   },
   {
