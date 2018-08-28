@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {put} /sep/updtglplg updtglplg
+ * @api {put} /sep/updtglplg Update Pulang 
  * @apiName updtglplg
  * @apiGroup BPJS-SEP
  * 

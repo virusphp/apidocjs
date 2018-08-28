@@ -3,9 +3,9 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getlistregister/{no_RM} getListRegister
+ * @api {get} /getlistregister/{no_RM} List Register
  * @apiName getListRegister
- * @apiGroup ListRegister 
+ * @apiGroup List-Register 
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {Integer} no_RM Kode RM (RM)

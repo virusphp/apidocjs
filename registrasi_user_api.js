@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {post} /user/create getRegisterUser
+ * @api {post} /user/create Get Data Registrasi User
  * @apiName getUserApi
  * @apiGroup UserAPI
  * @apiPermission admin

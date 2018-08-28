@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getallpasien getAllPasien
+ * @api {get} /getallpasien Semua Pasien
  * @apiName getAllPasien
  * @apiGroup Pasien
  * 
@@ -38,7 +38,7 @@ function getAllPasien() {
 }
 
 /**
- * @api {get} /getpasien/{no_RM} getPasien
+ * @api {get} /getpasien/{no_RM} Cek Pasien
  * @apiName getPasien 
  * @apiGroup Pasien
  * 

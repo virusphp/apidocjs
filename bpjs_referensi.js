@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /referensi/diagnosa/{kd_diagnosa} diagnosa
+ * @api {get} /referensi/diagnosa/{kd_diagnosa} Referensi Diagnosa
  * @apiName diagnosa
  * @apiGroup BPJS-Referensi
  * 
@@ -43,7 +43,7 @@ function diagnosa() {
 }
 
 /**
- * @api {get} /referensi/poli/{kd_poli} poli
+ * @api {get} /referensi/poli/{kd_poli} Referensi Poli
  * @apiName poli 
  * @apiGroup BPJS-Referensi
  * 
@@ -79,7 +79,7 @@ function poli() {
 }
 
 /**
- * @api {get} /referensi/dokter/{nama_dokter} dokter
+ * @api {get} /referensi/dokter/{nama_dokter} Refernsi Dokter (*)
  * @apiName dokter 
  * @apiGroup BPJS-Referensi
  * 

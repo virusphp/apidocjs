@@ -3,9 +3,9 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getalltarifkarcis getAllTarifKarcis
+ * @api {get} /getalltarifkarcis Semua Tarif 
  * @apiName getAllTarifKarcis
- * @apiGroup TarifKarcis
+ * @apiGroup Tarif-Karcis
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * 
@@ -39,9 +39,9 @@ function getAllTarifKarcis() {
 }
 
 /**
- * @api {get} /gettarifkarcis/kd_sub_unit getTarifKarcis
+ * @api {get} /gettarifkarcis/kd_sub_unit Cek Tarif Poli
  * @apiName getTarifKarcis 
- * @apiGroup TarifKarcis
+ * @apiGroup Tarif-Karcis
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {String} kd_sub_unit Nomor sub unit (poliklinik)

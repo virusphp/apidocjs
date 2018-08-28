@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /mon/kunjungan/tanggal/{tgl_sep}/jnspel/{jns_pel} Kunjungan
+ * @api {get} /mon/kunjungan/tanggal/{tgl_sep}/jnspel/{jns_pel} Monitoring Kunjungan
  * @apiName kunjungan
  * @apiGroup BPJS-Monitoring
  * 
@@ -62,7 +62,7 @@ function monitoringKunjungan() {
 }
 
 /**
- * @api {get} /mon/historipelayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir} History
+ * @api {get} /mon/hislayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir} Monitoring History
  * @apiName history
  * @apiGroup BPJS-Monitoring
  * 

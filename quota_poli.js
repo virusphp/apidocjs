@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getquotapoli/{tanggal}/{kd_sub_unit} getquotapoli
+ * @api {get} /getquotapoli/{tanggal}/{kd_sub_unit} Cek Kuota Poli
  * @apiName getquotapoli
  * @apiGroup Quota
  * 

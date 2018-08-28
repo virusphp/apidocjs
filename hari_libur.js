@@ -3,9 +3,9 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getallharilibur getAllHariLibur
+ * @api {get} /getallharilibur Semua Hari Libur
  * @apiName getallharilibur
- * @apiGroup HariLibur
+ * @apiGroup Hari-Libur
  * 
   * @apiParam {String} api_key Api Key terdaftar
  * 
@@ -48,9 +48,9 @@ var currentUser = {
  */
 
  /**
- * @api {get} /getharilibur/{tanggal} getHariLibur
+ * @api {get} /getharilibur/{tanggal} Cek Hari Libur
  * @apiName getharilibur
- * @apiGroup HariLibur
+ * @apiGroup Hari-Libur
  * 
   * @apiParam {String} api_key Api Key terdaftar
  * 

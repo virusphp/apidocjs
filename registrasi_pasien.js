@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {post} /sendregister registrasiPasien
+ * @api {post} /sendregister Registrasi Pasien
  * @apiName SendPasien
  * @apiGroup Registrasi
  * 
@@ -43,7 +43,7 @@ var currentUser = {
  */
 
 /**
- * @api {put} /updateregister Updateregistrasi
+ * @api {put} /updateregister Update Registrasi
  * @apiName UpdatePasien
  * @apiGroup Registrasi
  * 

@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /tanggalserver tanggalserver
+ * @api {get} /tanggalserver Tanggal server
  * @apiName tanggalserver
  * @apiGroup Tanggal
  * 

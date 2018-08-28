@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {post} /rujukaninternal/{no_rujukan} rujukaninternal
+ * @api {post} /rujukaninternal/{no_rujukan} Rujukan Internal
  * @apiName rujukaninternal
  * @apiGroup Rujukan
  * 

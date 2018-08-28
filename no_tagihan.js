@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getnotagihan/{no_tagihan} notagihan
+ * @api {get} /getnotagihan/{no_tagihan} No Tagihan
  * @apiName no_tagihan
  * @apiGroup Tagihan
  * 

@@ -3,9 +3,9 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getallsubunit getAllSubUnit
+ * @api {get} /getallsubunit Semua Sub Unit
  * @apiName getAllSubUnit
- * @apiGroup SubUnit 
+ * @apiGroup Sub-Unit 
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * 
@@ -40,9 +40,9 @@ function getAllSubUnit() {
 }
 
 /**
- * @api {get} /getsubunit/kd_sub_unit getSubUnit
+ * @api {get} /getsubunit/kd_sub_unit Cek Sub Unit
  * @apiName getSubUnit
- * @apiGroup SubUnit
+ * @apiGroup Sub-Unit
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {Integer} kd_sub_unit Kode sub unit (Poliklinik)

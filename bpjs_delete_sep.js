@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {delete} /sep/delete deleteSep
+ * @api {delete} /sep/delete Delete SEP
  * @apiName deleteSep
  * @apiGroup BPJS-SEP
  * 

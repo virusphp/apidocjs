@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getdokterpengganti/{kd_poli}/{tgl_reg} getDokterPengganti
+ * @api {get} /getdokterpengganti/{kd_poli}/{tgl_reg} Dokter Pengganti
  * @apiName getDokterPengganti
  * @apiGroup Dokter
  * 
@@ -37,7 +37,7 @@ function getDokterPengganti() {
 }
 
 /**
- * @api {get} /getalldokterpengganti getAllDokterPengganti
+ * @api {get} /getalldokterpengganti Semua Dokter Pengganti
  * @apiName getAllDokterPengganti
  * @apiGroup Dokter
  * 
@@ -70,7 +70,7 @@ function getAllDokterPengganti() {
 }
 
 /**
- * @api {get} /getjadwaldokter/{tanggal} getJadwalDokter
+ * @api {get} /getjadwaldokter/{tanggal} Cek Jadwal Dokter
  * @apiName getJadwalDokter
  * @apiGroup Dokter
  * 

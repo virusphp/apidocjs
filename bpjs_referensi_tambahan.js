@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /referensi/dokter/pelayanan/{jns_pel}/tglpelayanan/{tgl_pel}/spesialis/{kd_spesialis} dpjp
+ * @api {get} /referensi/dokter/pelayanan/{jns_pel}/tglpelayanan/{tgl_pel}/spesialis/{kd_spesialis} Referensi Dokter DPJP
  * @apiName dpjp
  * @apiGroup BPJS-Referensi
  * 
@@ -49,7 +49,7 @@ function dpjp() {
 }
 
 /**
- * @api {get} /referensi/provinsi provinsi
+ * @api {get} /referensi/provinsi Referensi Provinsi
  * @apiName provinsi
  * @apiGroup BPJS-Referensi
  * 
@@ -92,7 +92,7 @@ function propinsi() {
 }
 
 /**
- * @api {get} /referensi/kabupaten/propinsi/{kd_prov} kabupaten
+ * @api {get} /referensi/kabupaten/propinsi/{kd_prov} Referensi Kabupaten
  * @apiName kabupaten
  * @apiGroup BPJS-Referensi
  * 
@@ -136,7 +136,7 @@ function kabupaten() {
 }
 
 /**
- * @api {get} /referensi/kecamatan/kabupaten/{kd_kab} kecamatan
+ * @api {get} /referensi/kecamatan/kabupaten/{kd_kab} Referensi Kecamatan
  * @apiName kecamatan
  * @apiGroup BPJS-Referensi
  * 

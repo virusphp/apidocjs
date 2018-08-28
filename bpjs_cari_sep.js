@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /sep/{parameter} cariSep
+ * @api {get} /sep/{parameter} Cari SEP
  * @apiName cariSep
  * @apiGroup BPJS-SEP
  * 
@@ -49,5 +49,57 @@ var currentUser = {
  *   }
  */
 function deleteSep() {
+    return; 
+}
+
+/**
+ * @api {get} /sep/jasaraharja/suplesi/{no_kartu}/tglpel/{tgl_pel} Suplesi Jasa Raharja
+ * @apiName suplesiJasaRaharja
+ * @apiGroup BPJS-SEP
+ * 
+ * @apiParam {string} api_key api key terdaftar
+ * @apiParam {string} no_kartu nomer kartu peserta terdaftar
+ * @apiParam {date} tgl_pel tanggal pelayanan terdaftar
+ * 
+ * @apiExample Example usage:
+ * curl --request GET \
+ *      --url 'https://api.rsudkraton.com/sep/jasaraharja/suplesi/0301R0011017V000015/tglpel/2018-08-01' \
+ *      --Content-Type 'application/json' \
+ * 
+ * @apiSuccess {json} metadata Informasi code dan pesan
+ * @apiSuccess {json} response Informasi Potensi Sep sebagai suplesi
+ * 
+ * 
+ * @apiSuccessExample {json} Success-Response:
+ * 
+ *   {
+ *      "metaData": {
+ *         "code": "200",
+ *         "message": "Sukses"
+ *      },
+ *      "response": {
+ *        "jaminan": 
+ *           [
+ *               {
+ *                   "noRegister": "1234",
+ *                   "noSep": "0301R0110818V000008",
+ *                   "noSepAwal": "0301R0110818V000008",
+ *                   "noSuratJaminan": "-",
+ *                   "tglKejadian": "2018-08-06",
+ *                   "tglSep": "2018-08-08"                                    
+ *               },
+ *                               {
+ *                   "noRegister": "44222",
+ *                   "noSep": "0301R0110818V000018",
+ *                   "noSepAwal": "0301R0110818V000008",
+ *                   "noSuratJaminan": "-",
+ *                   "tglKejadian": "2018-08-06",
+ *                   "tglSep": "2018-08-08"                                    
+ *               }    
+ *           ],
+ *      }
+ *   }
+ */
+function potensiSuplesi() {
     return; 
 }

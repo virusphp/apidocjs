@@ -3,9 +3,9 @@ var currentUser = {
 };
 
 /**
- * @api {get} /getrawatjalan/{no_reg} getRawatJalan
+ * @api {get} /getrawatjalan/{no_reg} Cek Rawat Jalan
  * @apiName getRawatJalan
- * @apiGroup RawatJalan
+ * @apiGroup Rawat-Jalan
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {String} no_reg No registrasi pasien

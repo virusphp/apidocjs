@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {put} /sep/update updateSep
+ * @api {put} /sep/update Update SEP
  * @apiName updateSep
  * @apiGroup BPJS-SEP
  * 

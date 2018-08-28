@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {get} /rujukan/{no_rujukan} rujukan
+ * @api {get} /rujukan/{no_rujukan} Rujukan
  * @apiName rujukan
  * @apiGroup BPJS-Rujukan
  * 
@@ -100,7 +100,7 @@ var currentUser = {
 */
 
 /**
- * @api {get} /rujukan/peserta/{no_kartu} rujukanpeserta
+ * @api {get} /rujukan/peserta/{no_kartu} Rujukan Peserta
  * @apiName rujukanpeserta
  * @apiGroup BPJS-Rujukan
  * 

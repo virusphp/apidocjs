@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {post} /sendpasien loginPasien
+ * @api {post} /sendpasien Login Pasien
  * @apiName GetUser
  * @apiGroup Login
  * 

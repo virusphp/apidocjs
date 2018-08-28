@@ -3,7 +3,7 @@ var currentUser = {
 };
 
 /**
- * @api {post} /sep/insert cetakSep
+ * @api {post} /sep/insert Cetak SEP
  * @apiName cetakSep
  * @apiGroup BPJS-SEP
  * 
