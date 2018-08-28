@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {get} /rujukan/{no_rujukan} rujukan
  * @apiName rujukan
- * @apiGroup Rujukan
+ * @apiGroup BPJS-Rujukan
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {string} no_rujukan no rujukan  terdaftar
@@ -102,7 +102,7 @@ var currentUser = {
 /**
  * @api {get} /rujukan/peserta/{no_kartu} rujukanpeserta
  * @apiName rujukanpeserta
- * @apiGroup Rujukan
+ * @apiGroup BPJS-Rujukan
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {string} no_kartu no kartu  terdaftar
