@@ -491,7 +491,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/referensi/kabupaten/propinsi/{kd_prov}",
+    "url": "/referensi/kabupaten/provinsi/{kd_prov}",
     "title": "Referensi Kabupaten",
     "name": "kabupaten",
     "group": "BPJS_Referensi",
@@ -510,7 +510,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "kd_prov",
-            "description": "<p>kode propinsi terdaftar</p>"
+            "description": "<p>kode provinsi terdaftar</p>"
           }
         ]
       }
@@ -518,7 +518,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/kabupaten/propinsi/12 \\\n     --header 'key: your-api-key' \\",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/kabupaten/provinsi/12 \\\n     --header 'key: your-api-key' \\",
         "type": "json"
       }
     ],

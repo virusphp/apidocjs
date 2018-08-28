@@ -92,16 +92,16 @@ function propinsi() {
 }
 
 /**
- * @api {get} /referensi/kabupaten/propinsi/{kd_prov} Referensi Kabupaten
+ * @api {get} /referensi/kabupaten/provinsi/{kd_prov} Referensi Kabupaten
  * @apiName kabupaten
  * @apiGroup BPJS-Referensi
  * 
  * @apiParam {String} api_key Api Key terdaftar
- * @apiParam {String} kd_prov kode propinsi terdaftar
+ * @apiParam {String} kd_prov kode provinsi terdaftar
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://api.rsudkraton.com/referensi/kabupaten/propinsi/12 \
+ *      --url 'https://api.rsudkraton.com/referensi/kabupaten/provinsi/12 \
  *      --header 'key: your-api-key' \
  * 
  * @apiSuccess {json} metadata Informasi code dan pesan
