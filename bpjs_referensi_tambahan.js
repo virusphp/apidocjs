@@ -49,8 +49,8 @@ function dpjp() {
 }
 
 /**
- * @api {get} /referensi/propinsi propinsi
- * @apiName propinsi
+ * @api {get} /referensi/provinsi provinsi
+ * @apiName provinsi
  * @apiGroup BPJS-Referensi
  * 
  * @apiParam {String} api_key Api Key terdaftar
