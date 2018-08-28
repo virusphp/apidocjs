@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {get} /referensi/diagnosa/{kd_diagnosa} diagnosa
  * @apiName diagnosa
- * @apiGroup Referensi
+ * @apiGroup BPJS-Referensi
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {string} kd_diagnosa Kode diagnosa terdaftar
@@ -45,7 +45,7 @@ function diagnosa() {
 /**
  * @api {get} /referensi/poli/{kd_poli} poli
  * @apiName poli 
- * @apiGroup Referensi
+ * @apiGroup BPJS-Referensi
  * 
  * @apiParam {string} kd_poli Kode Poli terdaftar
  * 
@@ -81,7 +81,7 @@ function poli() {
 /**
  * @api {get} /referensi/dokter/{nama_dokter} dokter
  * @apiName dokter 
- * @apiGroup Referensi
+ * @apiGroup BPJS-Referensi
  * 
  * @apiParam {string} nama_dokter Nama Dokter terdaftar
  * 

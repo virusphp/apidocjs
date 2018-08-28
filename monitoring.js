@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {get} /mon/kunjungan/tanggal/{tgl_sep}/jnspel/{jns_pel} Kunjungan
  * @apiName kunjungan
- * @apiGroup Monitoring
+ * @apiGroup BPJS-Monitoring
  * 
   * @apiParam {String} api_key Api Key terdaftar
   * @apiParam {date} tgl_sep tanggal cetak sep terdaftar
@@ -64,7 +64,7 @@ function monitoringKunjungan() {
 /**
  * @api {get} /mon/historipelayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir} History
  * @apiName history
- * @apiGroup Monitoring
+ * @apiGroup BPJS-Monitoring
  * 
   * @apiParam {String} api_key Api Key terdaftar
   * @apiParam {String} no_kartu no kartu terdaftar

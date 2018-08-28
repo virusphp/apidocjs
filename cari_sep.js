@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {get} /sep/{parameter} cariSep
  * @apiName cariSep
- * @apiGroup SEP
+ * @apiGroup BPJS-SEP
  * 
  * @apiParam {string} no_sep peserta
  * 

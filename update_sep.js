@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {put} /sep/update updateSep
  * @apiName updateSep
- * @apiGroup SEP
+ * @apiGroup BPJS-SEP
  * 
  * @apiParam {json} json request json 
  * 

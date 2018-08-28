@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {delete} /sep/delete deleteSep
  * @apiName deleteSep
- * @apiGroup SEP
+ * @apiGroup BPJS-SEP
  * 
  * @apiParam {json} json request json 
  * 

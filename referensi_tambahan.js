@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {get} /referensi/dokter/pelayanan/{jns_pel}/tglpelayanan/{tgl_pel}/spesialis/{kd_spesialis} dpjp
  * @apiName dpjp
- * @apiGroup Referensi
+ * @apiGroup BPJS-Referensi
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {string} jns_pel jenis pelayanan terdaftar
@@ -51,7 +51,7 @@ function dpjp() {
 /**
  * @api {get} /referensi/propinsi propinsi
  * @apiName propinsi
- * @apiGroup Referensi
+ * @apiGroup BPJS-Referensi
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * 
@@ -94,7 +94,7 @@ function propinsi() {
 /**
  * @api {get} /referensi/kabupaten/propinsi/{kd_prov} kabupaten
  * @apiName kabupaten
- * @apiGroup Referensi
+ * @apiGroup BPJS-Referensi
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {String} kd_prov kode propinsi terdaftar
@@ -138,7 +138,7 @@ function kabupaten() {
 /**
  * @api {get} /referensi/kecamatan/kabupaten/{kd_kab} kecamatan
  * @apiName kecamatan
- * @apiGroup Referensi
+ * @apiGroup BPJS-Referensi
  * 
  * @apiParam {String} api_key Api Key terdaftar
  * @apiParam {String} kd_kab kode kabupaten terdaftar

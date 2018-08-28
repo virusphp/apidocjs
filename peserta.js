@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {get} /peserta/nik/{nik}/tglsep/{tgl_sep} Peserta Nik
  * @apiName pesertaNik
- * @apiGroup Peserta
+ * @apiGroup BPJS-Peserta
  * 
   * @apiParam {String} api_key Api Key terdaftar
   * @apiParam {nik} nik no induk kependudukan peserta terdaftar
@@ -85,7 +85,7 @@ function PesertaNik() {
 /**
  * @api {get} /peserta/nokartu/{no_kartu}/tglsep/{tgl_sep} Peserta No Kartu
  * @apiName pesertaNoKartu
- * @apiGroup Peserta
+ * @apiGroup BPJS-Peserta
  * 
   * @apiParam {String} api_key Api Key terdaftar
   * @apiParam {no_kartu} no_kartu no Kartu peserta terdaftar

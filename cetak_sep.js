@@ -5,7 +5,7 @@ var currentUser = {
 /**
  * @api {post} /sep/insert cetakSep
  * @apiName cetakSep
- * @apiGroup SEP
+ * @apiGroup BPJS-SEP
  * 
  * @apiParam {json} json request json 
  * 
