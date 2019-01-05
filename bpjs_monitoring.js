@@ -62,7 +62,7 @@ function monitoringKunjungan() {
 }
 
 /**
- * @api {get} /mon/hislayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir} Monitoring History
+ * @api {get} /mon/hispelayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir} Monitoring History
  * @apiName history
  * @apiGroup BPJS-Monitoring
  * 
@@ -73,7 +73,7 @@ function monitoringKunjungan() {
  * 
  * @apiExample Example usage:
  * curl --request GET \
- *      --url 'https://api.rsudkraton.com/mon/historypelayanan/nokartu/0031254455/tglmul/2018-01-01/tglakhir/2018-01-10' \
+ *      --url 'https://api.rsudkraton.com/mon/hispelayanan/nokartu/0031254455/tglmulai/2018-01-01/tglakhir/2018-01-10' \
  *      --Content-Type 'application/json' \
  * 
  * @apiSuccess {json} metadata Informasi code dan pesan

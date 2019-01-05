@@ -1,7 +1,7 @@
 [
   {
     "type": "get",
-    "url": "/mon/hislayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir}",
+    "url": "/mon/hispelayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir}",
     "title": "Monitoring History",
     "name": "history",
     "group": "BPJS_Monitoring",
@@ -42,7 +42,7 @@
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/mon/historypelayanan/nokartu/0031254455/tglmul/2018-01-01/tglakhir/2018-01-10' \\\n     --Content-Type 'application/json' \\",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/mon/hispelayanan/nokartu/0031254455/tglmulai/2018-01-01/tglakhir/2018-01-10' \\\n     --Content-Type 'application/json' \\",
         "type": "json"
       }
     ],
@@ -1285,7 +1285,7 @@
       "examples": [
         {
           "title": "Request-Sample:",
-          "content": "                                                  \n                                               \n{\n   \"request\": {\n      \"t_sep\": \n       {\n           \"noSep\":\"0301R00105160000569\",\n           \"tglPulang\":\"2016-06-12\",\n           \"user\":\"Coba Ws\"\n       }\n   }\n}",
+          "content": "                                                  \n                                               \n{\n   \"request\": {\n      \"t_sep\": \n       {\n           \"noSep\":\"0301R00105160000569\",\n           \"tglPlg\":\"2016-06-12 12:32:00\",\n           \"ppkPelayanan\":\"1105R001\"\n       }\n   }\n}",
           "type": "json"
         },
         {

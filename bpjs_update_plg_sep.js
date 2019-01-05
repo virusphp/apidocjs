@@ -25,8 +25,8 @@ var currentUser = {
  *         "t_sep": 
  *          {
  *              "noSep":"0301R00105160000569",
- *              "tglPulang":"2016-06-12",
- *              "user":"Coba Ws"
+ *              "tglPlg":"2016-06-12 12:32:00",
+ *              "ppkPelayanan":"1105R001"
  *          }
  *      }
  *   }                
