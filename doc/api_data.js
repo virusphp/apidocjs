@@ -1,6 +1,300 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/referensi/kelas",
+    "title": "Referensi Kelas Kamar",
+    "name": "Kamar",
+    "group": "BPJS_Kamar",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Api Key terdaftar</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "kd_ppk",
+            "description": "<p>Kode ppk rumah sakit</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/referensi/kelas' \\\n     --header 'key: your-api-key' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi diagnosa</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n     \"metaData\": \n         {\n             \"code\": \"1\",\n             \"message\": \"Ok\"\n             \"totalitems\": 16\n         },\n     \"response\": \n         {\n         \"list\": \n             [\n                 {\n                     \"kodekelas\": \"VIP\",\n                     \"namakelas\": \"VVIP\"\n                 },\n                {\n                     \"kodekelas\": \"NON\",\n                     \"namakelas\": \"-\"\n                 }\n             ],\n         }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./bpjs_referensi_kamar.js",
+    "groupTitle": "BPJS_Kamar"
+  },
+  {
+    "type": "post",
+    "url": "/kamar/create/{ppk}",
+    "title": "Buat Kamar",
+    "name": "createKamar",
+    "group": "BPJS_Kamar",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "json",
+            "optional": false,
+            "field": "json",
+            "description": "<p>request json</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request POST \\\n     --url 'https://api.rsudkraton.com/kamar/create/115051' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Kamar</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Sample:",
+          "content": "                                              \n{\n    \"kodekelas\": \"VIP\",\n    \"koderuang\": \"VIP 1\",\n    \"namaruang\": \"Ruang Angrek VIP\",\n    \"kapasitas\": \"1\",\n    \"tersedia\": \"0\",\n    \"tersediapria\": \"0\",\n    \"tersediawanita\": \"0\",\n    \"tersediapriawanita\": \"0\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "{\n   \"metaData\": {\n      \"code\": \"1\",\n      \"message\": \"Data berhaisil di simpan.\"\n   },\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./bpjs_ketersediaan_kamar.js",
+    "groupTitle": "BPJS_Kamar"
+  },
+  {
+    "type": "post",
+    "url": "/kamar/update/{ppk}",
+    "title": "Hapus Kamar",
+    "name": "hapusKamar",
+    "group": "BPJS_Kamar",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "json",
+            "optional": false,
+            "field": "json",
+            "description": "<p>request json</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request POST \\\n     --url 'https://api.rsudkraton.com/kamar/update/115051' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Kamar</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Sample:",
+          "content": "                                              \n{\n    \"kodekelas\": \"VIP\",\n    \"koderuang\": \"VIP 1\",\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "{\n   \"metaData\": {\n      \"code\": \"1\",\n      \"message\": \"Data berhaisil di hapus.\"\n   },\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./bpjs_ketersediaan_kamar.js",
+    "groupTitle": "BPJS_Kamar"
+  },
+  {
+    "type": "get",
+    "url": "/kamar/show/{ppk}/{start}/{limit}",
+    "title": "Show Kamar",
+    "name": "showKamar",
+    "group": "BPJS_Kamar",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request GET \\\n     --url 'https://api.rsudkraton.com/kamar/show/115051/1/2' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Kamar</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n   \"metaData\": {\n      \"code\": \"1\",\n      \"message\": \"Data berhaisil di hapus.\"\n   },\n   \"response\": {\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./bpjs_ketersediaan_kamar.js",
+    "groupTitle": "BPJS_Kamar"
+  },
+  {
+    "type": "post",
+    "url": "/kamar/update/{ppk}",
+    "title": "Update Kamar",
+    "name": "updateKamar",
+    "group": "BPJS_Kamar",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "json",
+            "optional": false,
+            "field": "json",
+            "description": "<p>request json</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl --request POST \\\n     --url 'https://api.rsudkraton.com/kamar/update/115051' \\\n     --Content-Type 'application/json' \\",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "metadata",
+            "description": "<p>Informasi code dan pesan</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "response",
+            "description": "<p>Informasi Kamar</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Sample:",
+          "content": "                                              \n{\n    \"kodekelas\": \"VIP\",\n    \"koderuang\": \"VIP 1\",\n    \"namaruang\": \"Ruang Angrek VIP\",\n    \"kapasitas\": \"1\",\n    \"tersedia\": \"0\",\n    \"tersediapria\": \"0\",\n    \"tersediawanita\": \"0\",\n    \"tersediapriawanita\": \"0\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "{\n   \"metaData\": {\n      \"code\": \"1\",\n      \"message\": \"Data berhaisil di simpan.\"\n   },\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./bpjs_ketersediaan_kamar.js",
+    "groupTitle": "BPJS_Kamar"
+  },
+  {
+    "type": "get",
     "url": "/mon/hispelayanan/nokartu/{no_kartu}/tglmulai/{tgl_mul}/tglakhir/{tgl_akhir}",
     "title": "Monitoring History",
     "name": "history",
